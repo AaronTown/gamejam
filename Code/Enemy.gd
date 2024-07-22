@@ -1,4 +1,4 @@
-extends "res://entity/EntityBase.gd"
+extends "res://Code/EntityBase.gd"
 
 @onready var animated_sprite = $AnimationPlayer
 @onready var emitter = get_node("/root/Game/Emitter")
@@ -31,5 +31,5 @@ func die():
 	# animated_sprite.play("death")
 	
 func drop():
-	#Spawn loot
+	get_parent().AddMoney(10000000000000)
 	pass

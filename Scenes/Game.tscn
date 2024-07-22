@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://d3y6ef8lhicea"]
+[gd_scene load_steps=7 format=3 uid="uid://d3y6ef8lhicea"]
 
 [ext_resource type="PackedScene" uid="uid://cwsmlam5oq3gc" path="res://Scenes/Emitter.tscn" id="1_hkjyb"]
 [ext_resource type="Script" path="res://Code/Game.gd" id="1_wtn4q"]
 [ext_resource type="PackedScene" uid="uid://cdqthb8jlxbkx" path="res://Scenes/Enemy.tscn" id="3_npbev"]
+[ext_resource type="PackedScene" uid="uid://dqm53kagevonj" path="res://Scenes/Reflector.tscn" id="4_45fep"]
 
 [sub_resource type="Gradient" id="Gradient_t2jg5"]
 
@@ -51,3 +52,7 @@ text = "Money: 0
 "
 
 [node name="Enemy" parent="." instance=ExtResource("3_npbev")]
+
+[node name="Reflector" parent="." instance=ExtResource("4_45fep")]
+position = Vector2(516, 252)
+rotation = 2.03505

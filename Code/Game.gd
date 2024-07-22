@@ -14,3 +14,6 @@ func _process(delta):
 	money += 1
 	$HealthIndicator.energy = max_energy * ($Emitter.max_health - $Emitter.health) / $Emitter.max_health
 	$GUI/Money.text = "Money: " + str(money)
+
+func AddMoney(amount):
+	money += amount

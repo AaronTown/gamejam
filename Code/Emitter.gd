@@ -15,14 +15,16 @@ func _ready():
 
 func _unhandled_input(event):
 	if event.is_action("Shoot"):
-		$Beam.show()
-		await get_tree().create_timer(0.4).timeout
-		$Beam.hide()
+		$Light.show()
+		$Light.enabled = true
+		await get_tree().create_timer(1.4).timeout
+		$Light.hide()
+		$Light.enabled = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	direction = global_position.direction_to(get_global_mouse_position()).angle()
-	$Beam.rotation = direction
+	$Light.rotation = direction
 
 func damage(_damage):
 	health -= _damage

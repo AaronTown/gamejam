@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://cdqthb8jlxbkx"]
 
-[ext_resource type="PackedScene" uid="uid://y7fw8kksvbfy" path="res://entity/EntityBase.tscn" id="1_6i58b"]
-[ext_resource type="Script" path="res://entity/Enemy.gd" id="2_rahnt"]
+[ext_resource type="PackedScene" uid="uid://y7fw8kksvbfy" path="res://Scenes/EntityBase.tscn" id="1_6i58b"]
+[ext_resource type="Script" path="res://Code/Enemy.gd" id="2_rahnt"]
 [ext_resource type="Texture2D" uid="uid://ci2gsdjoblnlc" path="res://assets/moth spawn in animation.png" id="4_8km8r"]
 [ext_resource type="Texture2D" uid="uid://d14mlktl4uf6" path="res://assets/shadowmoth animation.png" id="4_frhhf"]
 

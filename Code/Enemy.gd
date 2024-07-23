@@ -1,15 +1,19 @@
 extends "res://Code/EntityBase.gd"
 
 @onready var animated_sprite = $AnimationPlayer
-@onready var emitter = get_node("/root/Game/Emitter")
+@onready var emitter = get_node("/root/Game").emitter
 
 const damage = 50
 var health = 50
+var speed = 125
+
+signal died(enemy)
 
 func _ready():
 	animated_sprite.queue("spawn")
 	if animated_sprite.animation_finished:
-		print("hey")
+		#print("hey")
+		pass
 
 func _physics_process(delta):
 	animated_sprite.queue("flying")
@@ -17,10 +21,9 @@ func _physics_process(delta):
 
 func move(delta):
 	var direction = global_position.direction_to(emitter.global_position)
-	velocity = direction * 50
+	velocity = direction * speed
 	var collision = move_and_collide(velocity * delta)
 	if collision:
-		print("I collided with ", collision.get_collider().name)
 		var collider = collision.get_collider()
 		if collider.name == "Emitter":
 			collider.damage(damage)
@@ -32,11 +35,13 @@ func takeDamage(_damage):
 		die()
 
 func die():
+	
 	drop()
 	queue_free()
+	died.emit(self)
 	# animated_sprite.play("death")
 	
 func drop():
-	get_parent().AddMoney(10000000000000)
+	get_node("/root/Game").AddMoney(10000000000000)
 	pass
 

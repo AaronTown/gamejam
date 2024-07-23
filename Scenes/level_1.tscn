@@ -1,7 +1,6 @@
-[gd_scene load_steps=112 format=3 uid="uid://bxgksgmpgfbgw"]
+[gd_scene load_steps=111 format=3 uid="uid://cpperhtev6wpe"]
 
 [ext_resource type="Texture2D" uid="uid://dub2jjk4ng8ie" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/1 Tiles/Map_tiles.png" id="1_d50qo"]
-[ext_resource type="PackedScene" uid="uid://dioet63lax84w" path="res://Scenes/shadow_moth.tscn" id="2_3163b"]
 [ext_resource type="Texture2D" uid="uid://cee8247egblhg" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Trees/9.png" id="2_sln6u"]
 [ext_resource type="Texture2D" uid="uid://bsav21f5ucqh2" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Trees/1.png" id="3_cmvs3"]
 [ext_resource type="Texture2D" uid="uid://cp6go6e65s2et" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/5 Shadows/s1.png" id="3_py7p3"]
@@ -22,7 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://q6wjimxc3b18" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Trees/8.png" id="10_j01aw"]
 [ext_resource type="Texture2D" uid="uid://mkp1mddxi6vu" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/5 Shadows/r1.png" id="11_xwf34"]
 [ext_resource type="Texture2D" uid="uid://d3d5rn60wxq2y" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/5 Shadows/r2.png" id="13_df164"]
-[ext_resource type="PackedScene" uid="uid://jlnyba7p7v11" path="res://Scenes/aux_emitter.tscn" id="13_qsibp"]
+[ext_resource type="PackedScene" uid="uid://blhntoulpandp" path="res://Scenes/aux_emitter.tscn" id="13_qsibp"]
 [ext_resource type="PackedScene" uid="uid://c0fqi54flgo26" path="res://Scenes/Reflector.tscn" id="14_5wx33"]
 [ext_resource type="Texture2D" uid="uid://cl435s4bo0tib" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/5 Shadows/r3.png" id="14_8ep1s"]
 [ext_resource type="Texture2D" uid="uid://cg8tjmlrh8dxj" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/5 Shadows/r4.png" id="15_sw1ls"]
@@ -939,9 +938,6 @@ layer_1/tile_data = PackedInt32Array(851956, 851968, 22, 917492, 851968, 23, 851
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-61, -256)
 
-[node name="ShadowMoth" parent="." instance=ExtResource("2_3163b")]
-position = Vector2(-239, -102)
-
 [node name="Reflectors" type="Node2D" parent="."]
 position = Vector2(505, -241)
 
@@ -952,6 +948,7 @@ position = Vector2(-1277, -90)
 position = Vector2(-618, 128)
 
 [node name="Reflector3" parent="Reflectors" instance=ExtResource("14_5wx33")]
+position = Vector2(108, 278)
 
 [node name="Emitters" type="Node2D" parent="."]
 
@@ -963,3 +960,19 @@ position = Vector2(-980, -166)
 
 [node name="AuxEmitter2" parent="Emitters" instance=ExtResource("13_qsibp")]
 position = Vector2(645, -78)
+
+[node name="Spawners" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="Spawners"]
+position = Vector2(-295, -742)
+
+[node name="Marker2D2" type="Marker2D" parent="Spawners"]
+position = Vector2(700, -742)
+
+[node name="Marker2D3" type="Marker2D" parent="Spawners"]
+position = Vector2(884, -499)
+
+[node name="Marker2D4" type="Marker2D" parent="Spawners"]
+position = Vector2(-998, 189)
+
+[node name="Enemies" type="Node2D" parent="."]

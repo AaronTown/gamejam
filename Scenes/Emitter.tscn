@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Code/Emitter.gd" id="1_smvlj"]
 [ext_resource type="Texture2D" uid="uid://cc1sr3v2go0b5" path="res://assets/emitter.png" id="2_giou8"]
-[ext_resource type="PackedScene" uid="uid://c6oipqwhr46nj" path="res://Scenes/Light.tscn" id="3_6d4gg"]
+
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dcxjl"]
 radius = 134.41

@@ -1,25 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://c6oipqwhr46nj"]
 
-[ext_resource type="Script" path="res://Code/Light.gd" id="1_ybtf8"]
+[gd_scene load_steps=2 format=3 uid="uid://csmprn2qodqg1"]
 
-[sub_resource type="Gradient" id="Gradient_n7rba"]
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_7nlq6"]
-gradient = SubResource("Gradient_n7rba")
+[ext_resource type="Script" path="res://Code/Light.gd" id="1_3a6s1"]
 
 [node name="Light" type="Area2D"]
-script = ExtResource("1_ybtf8")
+script = ExtResource("1_3a6s1")
+strength = 225
+range = 370
+angle = 37
+rot = 52
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(0, 0, 31, -13, 31, 12)
+polygon = PackedVector2Array(0, 0, 200, -80, 200, 80)
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(15.5, 9.53674e-07)
-scale = Vector2(0.484375, 0.40625)
-texture = SubResource("GradientTexture2D_7nlq6")
+[node name="DamageTimer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
-[connection signal="hidden" from="." to="." method="_on_hidden"]
-[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="timeout" from="DamageTimer" to="." method="_on_damage_timer_timeout"]
+

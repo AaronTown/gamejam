@@ -12,8 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://dfguroovvwfap" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Trees/6.png" id="8_2uwtl"]
 [ext_resource type="Texture2D" uid="uid://bmqhdoeqpdjjx" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Trees/7.png" id="9_ydee7"]
 [ext_resource type="Texture2D" uid="uid://q6wjimxc3b18" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Trees/8.png" id="10_j01aw"]
-[ext_resource type="PackedScene" uid="uid://jlnyba7p7v11" path="res://aux_emitter.tscn" id="13_qsibp"]
-[ext_resource type="PackedScene" uid="uid://b27ccq5fmdeay" path="res://reflector.tscn" id="14_4kt70"]
+[ext_resource type="PackedScene" uid="uid://jlnyba7p7v11" path="res://Scenes/aux_emitter.tscn" id="13_qsibp"]
+[ext_resource type="PackedScene" uid="uid://c0fqi54flgo26" path="res://Scenes/Reflector.tscn" id="14_5wx33"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j8umw"]
 texture = ExtResource("1_d50qo")
@@ -649,5 +649,14 @@ position = Vector2(-70, 170)
 [node name="AuxEmitter" parent="." instance=ExtResource("13_qsibp")]
 position = Vector2(-980, -166)
 
-[node name="Reflector" parent="." instance=ExtResource("14_4kt70")]
-position = Vector2(-567, -347)
+[node name="AuxEmitter2" parent="." instance=ExtResource("13_qsibp")]
+position = Vector2(645, -78)
+
+[node name="Reflector" parent="." instance=ExtResource("14_5wx33")]
+position = Vector2(-772, -331)
+
+[node name="Reflector2" parent="." instance=ExtResource("14_5wx33")]
+position = Vector2(-113, -113)
+
+[node name="Reflector3" parent="." instance=ExtResource("14_5wx33")]
+position = Vector2(505, -241)

@@ -45,4 +45,3 @@ position = Vector2(2.99999, -4)
 scale = Vector2(0.425, 0.48125)
 sprite_frames = SubResource("SpriteFrames_3eapv")
 autoplay = "default"
-frame_progress = 0.626294

@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0fqi54flgo26"]
+
+[ext_resource type="Script" path="res://Code/Reflector.gd" id="1_ejwjw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7abq7"]
+radius = 15.0333
+
+[node name="Reflector" type="AnimatableBody2D"]
+script = ExtResource("1_ejwjw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_7abq7")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="LightDetectorCollider" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_7abq7")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

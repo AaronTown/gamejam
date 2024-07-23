@@ -1,9 +1,10 @@
-extends "res://entity/EntityBase.gd"
+extends "res://Code/EntityBase.gd"
 
 @onready var animated_sprite = $AnimationPlayer
 @onready var emitter = get_node("/root/Game/Emitter")
 
 const damage = 50
+var health = 50
 
 func _ready():
 	animated_sprite.queue("spawn")
@@ -25,6 +26,11 @@ func move(delta):
 			collider.damage(damage)
 			die()
 
+func takeDamage(_damage):
+	health -= _damage
+	if health <= 0:
+		die()
+
 func die():
 	drop()
 	queue_free()
@@ -33,3 +39,4 @@ func die():
 func drop():
 	#Spawn loot
 	pass
+

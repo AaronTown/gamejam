@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cwsmlam5oq3gc"]
+[gd_scene load_steps=5 format=3 uid="uid://cwsmlam5oq3gc"]
 
 [ext_resource type="Script" path="res://Code/Emitter.gd" id="1_smvlj"]
 [ext_resource type="Texture2D" uid="uid://cc1sr3v2go0b5" path="res://assets/emitter.png" id="2_giou8"]
+
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dcxjl"]
 radius = 134.41
@@ -18,20 +19,9 @@ offset = Vector2(0, -80)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 shape = SubResource("CircleShape2D_dcxjl")
 
-[node name="Beam" type="Node2D" parent="."]
+[node name="Light" parent="." instance=ExtResource("3_6d4gg")]
 visible = false
-z_index = -1
-
-[node name="DamageBox" type="Area2D" parent="Beam"]
-rotation = 1.5708
-
-[node name="Polygon2D" type="Polygon2D" parent="Beam/DamageBox"]
-position = Vector2(-36, 4)
-color = Color(1, 0, 0, 1)
-polygon = PackedVector2Array(-65, -7, -318, -859, 438, -859, 120, 2)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Beam/DamageBox"]
-polygon = PackedVector2Array(-87, -4, -354, -856, 394, -856, 87, -4)
+scale = Vector2(30, 30)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_dcxjl")

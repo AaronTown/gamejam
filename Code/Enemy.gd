@@ -37,6 +37,6 @@ func die():
 	# animated_sprite.play("death")
 	
 func drop():
-	#Spawn loot
+	get_parent().AddMoney(10000000000000)
 	pass
 

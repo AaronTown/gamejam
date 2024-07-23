@@ -57,3 +57,4 @@ func _on_body_exited(body):
 	if body is Enemy:
 		enemies.erase(body)
 	pass # Replace with function body.
+

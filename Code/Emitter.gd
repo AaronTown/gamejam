@@ -31,7 +31,7 @@ func _unhandled_input(event):
 			lightOb.range += 1
 		if event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
 			lightOb.range -= 1
-      
+	  
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	direction = global_position.direction_to(get_global_mouse_position()).angle()

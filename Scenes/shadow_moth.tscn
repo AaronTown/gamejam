@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://dioet63lax84w"]
+
+[ext_resource type="Texture2D" uid="uid://vsv2jlcf6ix7" path="res://assets/shadowmothanimation.png" id="1_feik5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hdsif"]
+atlas = ExtResource("1_feik5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yyepd"]
+atlas = ExtResource("1_feik5")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4j3ir"]
+atlas = ExtResource("1_feik5")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcqsh"]
+atlas = ExtResource("1_feik5")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o74pi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hdsif")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yyepd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4j3ir")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vcqsh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="ShadowMoth" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_o74pi")
+autoplay = "default"
+frame_progress = 0.430172

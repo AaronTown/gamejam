@@ -1,17 +1,57 @@
-[gd_scene load_steps=4 format=3 uid="uid://cwsmlam5oq3gc"]
+[gd_scene load_steps=9 format=3 uid="uid://cwsmlam5oq3gc"]
 
 [ext_resource type="Script" path="res://Code/Emitter.gd" id="1_smvlj"]
-[ext_resource type="Texture2D" uid="uid://cc1sr3v2go0b5" path="res://assets/emitter.png" id="2_giou8"]
+[ext_resource type="Texture2D" uid="uid://cc1sr3v2go0b5" path="res://assets/Emitter.png" id="2_giou8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jccg1"]
+atlas = ExtResource("2_giou8")
+region = Rect2(0, 0, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1d0gl"]
+atlas = ExtResource("2_giou8")
+region = Rect2(160, 0, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_27l0h"]
+atlas = ExtResource("2_giou8")
+region = Rect2(320, 0, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pfbr4"]
+atlas = ExtResource("2_giou8")
+region = Rect2(480, 0, 160, 160)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6drft"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jccg1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1d0gl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_27l0h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pfbr4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dcxjl"]
 radius = 134.41
 
 [node name="Emitter" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_smvlj")
+metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_giou8")
-offset = Vector2(0, -80)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6drft")
+autoplay = "default"
+frame = 2
+frame_progress = 0.793466
 
 [node name="HitBox" type="Area2D" parent="."]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c2qbt80qxtb7f"
-path="res://.godot/imported/Stars.png-8d307e3ae1fda6582803533aef3b5f10.ctex"
+path="res://.godot/imported/Stars.png-4efc57a13808d14e571f58e4366ad252.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/craftpix-net-280167-free-level-map-pixel-art-assets-pack/3 UI/Stars.png"
-dest_files=["res://.godot/imported/Stars.png-8d307e3ae1fda6582803533aef3b5f10.ctex"]
+source_file="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/3 UI/Stars.png"
+dest_files=["res://.godot/imported/Stars.png-4efc57a13808d14e571f58e4366ad252.ctex"]
 
 [params]
 

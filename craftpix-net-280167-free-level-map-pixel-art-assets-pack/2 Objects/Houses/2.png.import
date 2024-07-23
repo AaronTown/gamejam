@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b7aq6muufxfpf"
-path="res://.godot/imported/2.png-696c7beb5cc0531cc0203d4f3ef66510.ctex"
+path="res://.godot/imported/2.png-5b82cda094d5de381514fb0895137a21.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Houses/2.png"
-dest_files=["res://.godot/imported/2.png-696c7beb5cc0531cc0203d4f3ef66510.ctex"]
+source_file="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Houses/2.png"
+dest_files=["res://.godot/imported/2.png-5b82cda094d5de381514fb0895137a21.ctex"]
 
 [params]
 

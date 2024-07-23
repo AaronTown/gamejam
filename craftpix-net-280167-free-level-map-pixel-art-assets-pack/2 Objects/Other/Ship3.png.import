@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c546qp8g4hloj"
-path="res://.godot/imported/Ship3.png-a421acd24a6ff70cbd4ca8e68c6d17b1.ctex"
+path="res://.godot/imported/Ship3.png-c6e9837c0db9a043a3a9d108b816d528.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Other/Ship3.png"
-dest_files=["res://.godot/imported/Ship3.png-a421acd24a6ff70cbd4ca8e68c6d17b1.ctex"]
+source_file="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Other/Ship3.png"
+dest_files=["res://.godot/imported/Ship3.png-c6e9837c0db9a043a3a9d108b816d528.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dlm3ugahlv8hg"
-path="res://.godot/imported/4.png-cbc403737cc990c3278ffa8e40b30d0f.ctex"
+path="res://.godot/imported/4.png-5291338fe6ce1f6a78bb24957426bbf9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Ruins/4.png"
-dest_files=["res://.godot/imported/4.png-cbc403737cc990c3278ffa8e40b30d0f.ctex"]
+source_file="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Ruins/4.png"
+dest_files=["res://.godot/imported/4.png-5291338fe6ce1f6a78bb24957426bbf9.ctex"]
 
 [params]
 

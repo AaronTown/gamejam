@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c4l4oersc2kd3"
-path="res://.godot/imported/Fog_03.png-a72d4e2bb9df66e81c56138d649fba5b.ctex"
+path="res://.godot/imported/Fog_03.png-c04b98038af3472be8acf6fe2a5d6d74.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/craftpix-net-280167-free-level-map-pixel-art-assets-pack/4 Fog/Fog_03.png"
-dest_files=["res://.godot/imported/Fog_03.png-a72d4e2bb9df66e81c56138d649fba5b.ctex"]
+source_file="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/4 Fog/Fog_03.png"
+dest_files=["res://.godot/imported/Fog_03.png-c04b98038af3472be8acf6fe2a5d6d74.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bqsvc7mwe2erg"
-path="res://.godot/imported/EmitterAnimation.png-b7da8a8de215766ed2987a8709c49b47.ctex"
+path="res://.godot/imported/EmitterAnimation.png-c4afe19d90e24fe2a3927a11a157d54c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/craftpix-net-280167-free-level-map-pixel-art-assets-pack/EmitterAnimation.png"
-dest_files=["res://.godot/imported/EmitterAnimation.png-b7da8a8de215766ed2987a8709c49b47.ctex"]
+source_file="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/EmitterAnimation.png"
+dest_files=["res://.godot/imported/EmitterAnimation.png-c4afe19d90e24fe2a3927a11a157d54c.ctex"]
 
 [params]
 

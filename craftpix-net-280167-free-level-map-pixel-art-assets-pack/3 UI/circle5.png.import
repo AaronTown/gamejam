@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bv78vma8oun3e"
-path="res://.godot/imported/circle5.png-540e83f49ca4811e0b996fa5dbdd61f9.ctex"
+path="res://.godot/imported/circle5.png-dc2f5430e66e05a459bcbe3c6bc380a5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/craftpix-net-280167-free-level-map-pixel-art-assets-pack/3 UI/circle5.png"
-dest_files=["res://.godot/imported/circle5.png-540e83f49ca4811e0b996fa5dbdd61f9.ctex"]
+source_file="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/3 UI/circle5.png"
+dest_files=["res://.godot/imported/circle5.png-dc2f5430e66e05a459bcbe3c6bc380a5.ctex"]
 
 [params]
 

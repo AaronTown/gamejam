@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8dcueuvm5xsr"
-path="res://.godot/imported/Map_tile_17.png-1e39c391dbebc686db8258bfce258965.ctex"
+path="res://.godot/imported/Map_tile_17.png-faa9b66824447a57d1485161df7ccbaa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/craftpix-net-280167-free-level-map-pixel-art-assets-pack/1 Tiles/Map_tile_17.png"
-dest_files=["res://.godot/imported/Map_tile_17.png-1e39c391dbebc686db8258bfce258965.ctex"]
+source_file="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/1 Tiles/Map_tile_17.png"
+dest_files=["res://.godot/imported/Map_tile_17.png-faa9b66824447a57d1485161df7ccbaa.ctex"]
 
 [params]
 

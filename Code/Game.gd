@@ -36,6 +36,7 @@ func AddMoney(amount):
 
 func StartRound(round : int):
 	enemies_to_spawn = 8 + 2 ** round
+	#enemies_to_spawn = 1
 	enemies = enemies_to_spawn 
 
 func EnemyDied(enemy):

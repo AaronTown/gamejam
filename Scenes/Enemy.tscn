@@ -222,3 +222,6 @@ shape = SubResource("CircleShape2D_mgpah")
 libraries = {
 "": SubResource("AnimationLibrary_v3nfp")
 }
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." index="3"]
+avoidance_enabled = true

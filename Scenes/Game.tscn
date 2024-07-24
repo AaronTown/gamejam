@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://d3y6ef8lhicea"]
+[gd_scene load_steps=9 format=3 uid="uid://d3y6ef8lhicea"]
 
 [ext_resource type="PackedScene" uid="uid://cwsmlam5oq3gc" path="res://Scenes/Emitter.tscn" id="1_hkjyb"]
 [ext_resource type="Script" path="res://Code/Game.gd" id="1_wtn4q"]
 [ext_resource type="PackedScene" uid="uid://cdqthb8jlxbkx" path="res://Scenes/Enemy.tscn" id="3_npbev"]
 [ext_resource type="PackedScene" uid="uid://c0fqi54flgo26" path="res://Scenes/Reflector.tscn" id="4_8nvn0"]
+[ext_resource type="PackedScene" uid="uid://1snjo1ortl68" path="res://Scenes/game_over.tscn" id="5_8c6g5"]
+[ext_resource type="Script" path="res://Cursor.gd" id="6_jhv81"]
 
 [sub_resource type="Gradient" id="Gradient_t2jg5"]
 
@@ -59,3 +61,18 @@ position = Vector2(588, 334)
 
 [node name="Reflector2" parent="." instance=ExtResource("4_8nvn0")]
 position = Vector2(775, 300)
+
+[node name="GameOver" parent="." instance=ExtResource("5_8c6g5")]
+visible = false
+
+[node name="Enemy2" parent="." instance=ExtResource("3_npbev")]
+position = Vector2(273, 422)
+
+[node name="Enemy3" parent="." instance=ExtResource("3_npbev")]
+position = Vector2(588, 555)
+
+[node name="Enemy4" parent="." instance=ExtResource("3_npbev")]
+position = Vector2(688, 207)
+
+[node name="Cursor" type="Node2D" parent="."]
+script = ExtResource("6_jhv81")

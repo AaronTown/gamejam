@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://1snjo1ortl68"]
+
+[ext_resource type="Script" path="res://scripts/game_over.gd" id="1_qphgg"]
+
+[node name="GameOver" type="CanvasLayer"]
+script = ExtResource("1_qphgg")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0, 0, 0.145098)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 238.0
+offset_top = 156.0
+offset_right = 889.0
+offset_bottom = 321.0
+theme_override_font_sizes/font_size = 120
+text = "Game Over"
+
+[node name="ResetGameButton" type="Button" parent="."]
+offset_left = 485.0
+offset_top = 325.0
+offset_right = 648.0
+offset_bottom = 416.0
+theme_override_font_sizes/font_size = 60
+text = "Retry"
+
+[connection signal="pressed" from="ResetGameButton" to="." method="_on_reset_game_button_pressed"]

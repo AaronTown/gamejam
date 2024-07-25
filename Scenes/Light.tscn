@@ -16,6 +16,10 @@ polygon = PackedVector2Array(-50, -10, 10.0192, -10.6124, 48, -11, 49, -43, -51,
 [node name="Light" type="Area2D"]
 collision_mask = 7
 script = ExtResource("1_3a6s1")
+strength = 225
+range = 370
+angle = 37
+rot = 52
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(196.238, 0)

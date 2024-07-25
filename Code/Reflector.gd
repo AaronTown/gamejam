@@ -56,10 +56,10 @@ func checkLightValidity():
 		updateLight()
 
 func createLight(area):
-		lightOb = lightscene.instantiate()
-		lightOb.damage = 10
-		lightOb.angle = area.angle / 2
-		lightOb.range = area.range * 2/3
+		light_object = light_scene.instantiate()
+		light_object.damage = 10
+		light_object.angle = area.angle / 2
+		light_object.range = area.range * 2/3
 
 func updateLight():
 	# delete own light object, accumulate and average received_lights values, create new light

@@ -6,7 +6,7 @@ extends Area2D
 @export var angle = 12
 @export var rot = 0
 
-var damage
+var damage = 100
 
 const Enemy = preload("res://Code/Enemy.gd")
 var enemies = []

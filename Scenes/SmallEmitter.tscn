@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cticiptg3al5b"]
+[gd_scene load_steps=12 format=3 uid="uid://cticiptg3al5b"]
 
 [ext_resource type="Script" path="res://Code/SmallEmitter.gd" id="1_vjr8h"]
 [ext_resource type="Texture2D" uid="uid://ltqinjlblmiv" path="res://assets/EmitterSmall.png" id="2_0wvvp"]
@@ -45,6 +45,15 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Gradient" id="Gradient_7kie2"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_48w4g"]
+gradient = SubResource("Gradient_7kie2")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.862385, 0.206422)
+
 [node name="SmallEmitter" type="CharacterBody2D"]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_vjr8h")
@@ -57,20 +66,6 @@ scale = Vector2(2, 2)
 scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_8xxgd")
 
-[node name="Beam" type="Node2D" parent="."]
-z_index = -1
-
-[node name="DamageBox" type="Area2D" parent="Beam"]
-rotation = 1.5708
-
-[node name="Polygon2D" type="Polygon2D" parent="Beam/DamageBox"]
-position = Vector2(-36, 4)
-color = Color(1, 0, 0, 1)
-polygon = PackedVector2Array(-65, -7, -318, -859, 438, -859, 120, 2)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Beam/DamageBox"]
-polygon = PackedVector2Array(-87, -4, -354, -856, 394, -856, 87, -4)
-
 [node name="DefaultAim" type="Marker2D" parent="."]
 position = Vector2(0, -250)
 
@@ -82,5 +77,10 @@ position = Vector2(2.99999, -4)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_msd7t")
 autoplay = "default"
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 2.15
+texture = SubResource("GradientTexture2D_48w4g")
+texture_scale = 4.33
 
 [connection signal="body_entered" from="ViewBox" to="." method="_on_hitbox_body_entered"]

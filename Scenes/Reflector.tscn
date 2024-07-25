@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c0fqi54flgo26"]
+[gd_scene load_steps=11 format=3 uid="uid://c0fqi54flgo26"]
 
 [ext_resource type="Script" path="res://Code/Reflector.gd" id="1_ejwjw"]
 [ext_resource type="Texture2D" uid="uid://bsf0t1wymy5jx" path="res://assets/Reflector.png" id="2_w0v5w"]
@@ -42,6 +42,15 @@ animations = [{
 "speed": 2.0
 }]
 
+[sub_resource type="Gradient" id="Gradient_ml10b"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_yylfd"]
+gradient = SubResource("Gradient_ml10b")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.862385, 0.206422)
+
 [node name="Reflector" type="AnimatableBody2D"]
 script = ExtResource("1_ejwjw")
 
@@ -59,6 +68,10 @@ scale = Vector2(0.164063, 0.167187)
 sprite_frames = SubResource("SpriteFrames_5lpd8")
 autoplay = "default"
 frame_progress = 0.14156
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+texture = SubResource("GradientTexture2D_yylfd")
+texture_scale = 4.33
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

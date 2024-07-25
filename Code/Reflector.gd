@@ -26,7 +26,6 @@ func _on_input_event(viewport, event, shape_idx):
 			self.rotation -= 0.1
 
 func createLight(area):
-	print("reflector has entered light area")
 	lightOb = lightscene.instantiate()
 	lightOb.damage = 10
 	lightOb.angle = area.angle / 2

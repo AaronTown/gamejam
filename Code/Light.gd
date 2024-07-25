@@ -48,7 +48,6 @@ func _physics_process(delta):
 		var query = PhysicsRayQueryParameters2D.create(global_position, enemy.global_position, 0b0011, [self])
 		var result = space_state.intersect_ray(query)
 		if result:
-			print(result)
 			if result.collider.name == "Wall" and global_position.distance_to(result.position) < global_position.distance_to(enemy.global_position):
 				pass
 			else:

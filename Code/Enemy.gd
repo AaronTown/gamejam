@@ -20,7 +20,6 @@ func _ready():
 	call_deferred("actor_setup")
 	animated_sprite.queue("spawn")
 	if animated_sprite.animation_finished:
-		#print("hey")
 		pass
 
 
@@ -42,10 +41,9 @@ func _physics_process(delta):
 func move(delta):
 	if navigation_agent.is_navigation_finished():
 		return
-		
+	navigation_agent.target_position = GetTarget().global_position
 	var current_agent_position: Vector2 = global_position
 	var next_path_position: Vector2 = navigation_agent.get_next_path_position()
-	var direction = global_position.direction_to(emitter.global_position)
 	velocity = current_agent_position.direction_to(next_path_position) * speed
 	var collision = move_and_collide(velocity * delta)
 	if collision:
@@ -53,6 +51,18 @@ func move(delta):
 		if collider.name == "Emitter":
 			collider.damage(damage)
 			die()
+
+func GetTarget():
+	var closest = emitter
+	var distance = global_position.distance_squared_to(closest.global_position)
+	for tower in get_node("/root/Game/Level1/Emitters").get_children():
+		print(tower, tower.global_position)
+		print(global_position)
+		var towerDistance = global_position.distance_squared_to(tower.global_position)
+		if  towerDistance < distance:
+			closest = tower
+			distance = towerDistance
+	return closest
 
 func takeDamage(_damage):
 	health -= _damage

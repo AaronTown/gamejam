@@ -39,9 +39,9 @@ func _process(delta):
 
 func target():
 	for body in $ViewBox.get_overlapping_bodies():
-		if body.name == "Enemy":
-			return body
-	return $DefaultAim
+		if body.is_in_group("Enemy"):
+			return body.global_position
+	return $DefaultAim.global_position
 
 func damage(_damage):
 	health -= _damage

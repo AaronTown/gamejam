@@ -1,0 +1,86 @@
+[gd_scene load_steps=12 format=3 uid="uid://cticiptg3al5b"]
+
+[ext_resource type="Script" path="res://Code/SmallEmitter.gd" id="1_vjr8h"]
+[ext_resource type="Texture2D" uid="uid://ltqinjlblmiv" path="res://assets/EmitterSmall.png" id="2_0wvvp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8xxgd"]
+radius = 216.005
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dcxjl"]
+radius = 134.41
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4ek7"]
+atlas = ExtResource("2_0wvvp")
+region = Rect2(0, 0, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dd7lw"]
+atlas = ExtResource("2_0wvvp")
+region = Rect2(160, 0, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xstb4"]
+atlas = ExtResource("2_0wvvp")
+region = Rect2(320, 0, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_thibp"]
+atlas = ExtResource("2_0wvvp")
+region = Rect2(480, 0, 160, 160)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_msd7t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p4ek7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dd7lw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xstb4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_thibp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_7kie2"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_48w4g"]
+gradient = SubResource("Gradient_7kie2")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.862385, 0.206422)
+
+[node name="SmallEmitter" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_vjr8h")
+metadata/_edit_group_ = true
+
+[node name="ViewBox" type="Area2D" parent="."]
+scale = Vector2(2, 2)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ViewBox"]
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_8xxgd")
+
+[node name="DefaultAim" type="Marker2D" parent="."]
+position = Vector2(0, -250)
+
+[node name="HitBox" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_dcxjl")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(2.99999, -4)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_msd7t")
+autoplay = "default"
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 2.15
+texture = SubResource("GradientTexture2D_48w4g")
+texture_scale = 4.33
+
+[connection signal="body_entered" from="ViewBox" to="." method="_on_hitbox_body_entered"]

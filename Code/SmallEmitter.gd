@@ -14,18 +14,17 @@ var tick = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	lightOb = Light.instantiate()
-	lightOb.damage = 100
+	lightOb.damage = 10
 	add_child(lightOb)
 	pass
 
 
 func _unhandled_input(event):
-	if event.is_action("Shoot"):
-
-		$Light.show()
-		await get_tree().create_timer(0.4).timeout
-		$Light.hide()
-	
+	#if event.is_action("Shoot"):
+#
+		#$Beam.show()
+		#await get_tree().create_timer(0.4).timeout
+		#$Beam.hide()
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_WHEEL_UP:
 			lightOb.range += 1
@@ -34,12 +33,15 @@ func _unhandled_input(event):
 	  
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	
-	direction = global_position.direction_to(get_global_mouse_position()).angle()
+	direction = global_position.direction_to(target()).angle()
 
 	lightOb.rotation = direction
 
-
+func target():
+	for body in $ViewBox.get_overlapping_bodies():
+		if body.is_in_group("Enemy"):
+			return body.global_position
+	return $DefaultAim.global_position
 
 func damage(_damage):
 	health -= _damage

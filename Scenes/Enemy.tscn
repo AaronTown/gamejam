@@ -206,7 +206,7 @@ _data = {
 "spawn": SubResource("Animation_74sbg")
 }
 
-[node name="Enemy" instance=ExtResource("1_6i58b")]
+[node name="Enemy" groups=["Enemy"] instance=ExtResource("1_6i58b")]
 script = ExtResource("2_rahnt")
 
 [node name="Sprite2D" parent="." index="0"]
@@ -222,3 +222,6 @@ shape = SubResource("CircleShape2D_mgpah")
 libraries = {
 "": SubResource("AnimationLibrary_v3nfp")
 }
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." index="3"]
+avoidance_enabled = true

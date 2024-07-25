@@ -1,4 +1,4 @@
-[gd_scene load_steps=112 format=3 uid="uid://bxgksgmpgfbgw"]
+[gd_scene load_steps=113 format=3 uid="uid://cpperhtev6wpe"]
 
 [ext_resource type="Texture2D" uid="uid://dub2jjk4ng8ie" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/1 Tiles/Map_tiles.png" id="1_d50qo"]
 [ext_resource type="PackedScene" path="res://Scenes/shadow_moth.tscn" id="2_3163b"]
@@ -22,7 +22,6 @@
 [ext_resource type="Texture2D" uid="uid://q6wjimxc3b18" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Trees/8.png" id="10_j01aw"]
 [ext_resource type="Texture2D" uid="uid://mkp1mddxi6vu" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/5 Shadows/r1.png" id="11_xwf34"]
 [ext_resource type="Texture2D" uid="uid://d3d5rn60wxq2y" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/5 Shadows/r2.png" id="13_df164"]
-[ext_resource type="PackedScene" uid="uid://jlnyba7p7v11" path="res://Scenes/aux_emitter.tscn" id="13_qsibp"]
 [ext_resource type="PackedScene" uid="uid://c0fqi54flgo26" path="res://Scenes/Reflector.tscn" id="14_5wx33"]
 [ext_resource type="Texture2D" uid="uid://cl435s4bo0tib" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/5 Shadows/r3.png" id="14_8ep1s"]
 [ext_resource type="Texture2D" uid="uid://cg8tjmlrh8dxj" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/5 Shadows/r4.png" id="15_sw1ls"]
@@ -57,6 +56,8 @@
 [ext_resource type="Texture2D" uid="uid://b1houkee6ievk" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Houses/5.png" id="47_uyvnn"]
 [ext_resource type="Texture2D" uid="uid://bmbkftsj6ay7r" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Houses/6.png" id="48_ykniw"]
 [ext_resource type="Texture2D" uid="uid://cfif3h8ql5exe" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Houses/4.png" id="49_wosyf"]
+[ext_resource type="PackedScene" uid="uid://cticiptg3al5b" path="res://Scenes/SmallEmitter.tscn" id="56_3vk6i"]
+[ext_resource type="PackedScene" uid="uid://c2tr4br53qk37" path="res://Scenes/Wall.tscn" id="57_dspq4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j8umw"]
 texture = ExtResource("1_d50qo")
@@ -927,9 +928,17 @@ sources/51 = SubResource("TileSetAtlasSource_34l8f")
 sources/52 = SubResource("TileSetAtlasSource_b7sic")
 sources/53 = SubResource("TileSetAtlasSource_5ev8y")
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ue4ca"]
+vertices = PackedVector2Array(-1016, -740, -161, -740, -255, 96, -1008, 225, 890, 226, 3, 91, 889, -741, 134, -741)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 3, 2, 5), PackedInt32Array(6, 4, 5, 7)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-1018, 235, 901, 237, 899, -752, 125.76, -751.197, -6, 81, -244, 86, -150.445, -750.91, -1027, -750)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+
 [node name="Level1" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
+visibility_layer = 513
+z_index = -4
 tile_set = SubResource("TileSet_jqc03")
 format = 2
 layer_0/name = "base"
@@ -943,9 +952,6 @@ layer_2/tile_data = PackedInt32Array(851956, 851968, 22, 917492, 851968, 23, 851
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-61, -256)
 
-[node name="ShadowMoth" parent="." instance=ExtResource("2_3163b")]
-position = Vector2(-239, -102)
-
 [node name="Reflectors" type="Node2D" parent="."]
 position = Vector2(505, -241)
 
@@ -956,14 +962,37 @@ position = Vector2(-1277, -90)
 position = Vector2(-618, 128)
 
 [node name="Reflector3" parent="Reflectors" instance=ExtResource("14_5wx33")]
+position = Vector2(108, 278)
 
 [node name="Emitters" type="Node2D" parent="."]
 
 [node name="Emitter" parent="Emitters" instance=ExtResource("3_v2c3n")]
 position = Vector2(-70, 170)
 
-[node name="AuxEmitter" parent="Emitters" instance=ExtResource("13_qsibp")]
-position = Vector2(-980, -166)
+[node name="SmallEmitter" parent="Emitters" instance=ExtResource("56_3vk6i")]
+position = Vector2(436, -40)
 
-[node name="AuxEmitter2" parent="Emitters" instance=ExtResource("13_qsibp")]
-position = Vector2(645, -78)
+[node name="Spawners" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="Spawners"]
+position = Vector2(-295, -742)
+
+[node name="Marker2D2" type="Marker2D" parent="Spawners"]
+position = Vector2(700, -742)
+
+[node name="Marker2D3" type="Marker2D" parent="Spawners"]
+position = Vector2(884, -499)
+
+[node name="Marker2D4" type="Marker2D" parent="Spawners"]
+position = Vector2(-998, 189)
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Wall" parent="." instance=ExtResource("57_dspq4")]
+position = Vector2(335, -608)
+scale = Vector2(10, 10)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_ue4ca")

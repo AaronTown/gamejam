@@ -18,7 +18,7 @@ func _process(delta):
 	if picked_up:
 		var current_position = self.global_position
 		var mouse_position = get_global_mouse_position()
-		
+
 		var distance = current_position.distance_to(mouse_position)
 		if distance > 80:
 			position = mouse_position
@@ -27,7 +27,7 @@ func _process(delta):
 
 		var speed = distance / delta
 		velocity = direction * speed
-		
+
 		move_and_slide()
 
 func _on_input_event(viewport, event, shape_idx):
@@ -54,7 +54,12 @@ func checkLightValidity():
 			update_flag = true
 	if update_flag:
 		updateLight()
-	
+
+func createLight(area):
+		lightOb = lightscene.instantiate()
+		lightOb.damage = 10
+		lightOb.angle = area.angle / 2
+		lightOb.range = area.range * 2/3
 
 func updateLight():
 	# delete own light object, accumulate and average received_lights values, create new light
@@ -62,7 +67,7 @@ func updateLight():
 		light_object.queue_free()
 	if received_lights.is_empty():
 		return
-		
+
 	#var strength = 0
 	var angle = 0
 	var range = 0
@@ -71,18 +76,18 @@ func updateLight():
 			continue
 		angle += light.angle
 		range += light.range
-	
+
 	light_object = light_scene.instantiate()
 	var num_lights = received_lights.size()
 	light_object.angle = angle / num_lights / 2
 	light_object.range = range / num_lights * 2/3
-	
+
 	add_child(light_object)
-	
+
 func isFacingAway(a, b):
 	var diff = a.rotation - b.rotation
 	return abs(diff) > 1.3
-	
+
 func _on_area_2d_area_entered(area):
 	if area is Light:
 		if area != light_object:

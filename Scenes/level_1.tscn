@@ -1,7 +1,7 @@
 [gd_scene load_steps=112 format=3 uid="uid://bxgksgmpgfbgw"]
 
 [ext_resource type="Texture2D" uid="uid://dub2jjk4ng8ie" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/1 Tiles/Map_tiles.png" id="1_d50qo"]
-[ext_resource type="PackedScene" uid="uid://dioet63lax84w" path="res://Scenes/shadow_moth.tscn" id="2_3163b"]
+[ext_resource type="PackedScene" path="res://Scenes/shadow_moth.tscn" id="2_3163b"]
 [ext_resource type="Texture2D" uid="uid://cee8247egblhg" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Trees/9.png" id="2_sln6u"]
 [ext_resource type="Texture2D" uid="uid://bsav21f5ucqh2" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Trees/1.png" id="3_cmvs3"]
 [ext_resource type="Texture2D" uid="uid://cp6go6e65s2et" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/5 Shadows/s1.png" id="3_py7p3"]

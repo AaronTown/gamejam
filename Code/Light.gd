@@ -1,18 +1,14 @@
 extends Area2D
 
 
-@export var strength = 10
-@export var range = 10
-@export var angle = 12 
-@export var rot = 0
+#var strength =200
+var range = 400
+var angle = 20
 
 var damage
 
 const Enemy = preload("res://Code/Enemy.gd")
 var enemies = []
-
-@onready var col = $CollisionPolygon2D
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,15 +17,14 @@ func _ready():
 	pass # Replace with function body.
 
 #should only happen if parent is moved or rotated
-func updateCollision():
-	#var col = get_node("CollisionPolygon2D")
+func updateCollision(): 
+	var col = get_node("CollisionPolygon2D")
 	var p1 = Vector2(0,0)
 	var opp = tan(deg_to_rad(angle)) * range
 	var p2 = Vector2(range, -opp)
 	var p3 = Vector2(range, opp)
 	col.polygon = [p1,p2,p3]
 	#col.set_polygon(PackedVector2Array([p1,p2,p3]))
-	self.rotation = deg_to_rad(rot)
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

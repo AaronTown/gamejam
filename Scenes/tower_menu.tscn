@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cmja6jsml0h56"]
+
+[node name="TowerMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="HFlowContainer" type="HFlowContainer" parent="."]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 8.0
+scale = Vector2(2.655, 2.655)
+
+[node name="Button" type="Button" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="Button3" type="Button" parent="HFlowContainer"]
+layout_mode = 2

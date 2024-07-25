@@ -22,9 +22,9 @@ func _ready():
 func _unhandled_input(event):
 	if event.is_action("Shoot"):
 
-		$Beam.show()
+		$Light.show()
 		await get_tree().create_timer(0.4).timeout
-		$Beam.hide()
+		$Light.hide()
 	
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_WHEEL_UP:

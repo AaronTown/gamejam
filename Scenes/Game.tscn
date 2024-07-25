@@ -40,4 +40,12 @@ offset_bottom = 366.0
 text = "Money: 0
 "
 
+[node name="Wave" type="Label" parent="GUI"]
+visible = false
+layout_mode = 0
+offset_top = -75.0
+offset_right = 60.0
+offset_bottom = -52.0
+text = "Wave: 1"
+
 [node name="Level1" parent="." instance=ExtResource("2_fciqn")]

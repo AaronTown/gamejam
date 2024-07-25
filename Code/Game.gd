@@ -35,6 +35,10 @@ func AddMoney(amount):
 	money += amount
 
 func StartRound(round : int):
+	$GUI/Wave.text = "Wave: " + str(round)
+	$GUI/Wave.show()
+	await get_tree().create_timer(3).timeout
+	$GUI/Wave.hide()
 	enemies_to_spawn = 8 + 2 ** round
 	#enemies_to_spawn = 1
 	enemies = enemies_to_spawn 

@@ -21,7 +21,7 @@ window/size/mode=2
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addons/nklbdev.aseprite_importers/plugin.cfg")
+enabled=PackedStringArray()
 
 [input]
 
@@ -30,6 +30,17 @@ Shoot={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":32,"echo":false,"script":null)
 ]
 }
+
+[layer_names]
+
+2d_render/layer_1="Tower"
+2d_render/layer_2="Enemy"
+2d_render/layer_3="Obstacle"
+2d_render/layer_4="Background"
+2d_physics/layer_1="Tower"
+2d_physics/layer_2="Enemy"
+2d_physics/layer_3="Obstacle"
+2d_physics/layer_4="Background"
 
 [rendering]
 

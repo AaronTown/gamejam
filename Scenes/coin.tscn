@@ -54,5 +54,3 @@ script = ExtResource("2_65flc")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-17.6147, -26.422)
 shape = SubResource("CircleShape2D_w083d")
-
-[node name="coins" type="Node" parent="."]

@@ -16,13 +16,15 @@ func _ready():
 	randomize()
 	round = 1
 	StartRound(round)
+	# Connect to coins
+	get_tree().connect("node_added", Callable(self, "_on_node_added"))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	money += 1
+	# money += 1
 	$HealthIndicator.energy = max_energy * (emitter.max_health - emitter.health) / emitter.max_health
-	$GUI/Money.text = "Money: " + str(money)
+	$GUI/Money.text = ": " + str(money)
 	if enemies_to_spawn > 0:
 		var spawn = Spawners.get_children()[randi_range(0,3)].global_position
 		var new_enemy = Enemy.instantiate()
@@ -30,6 +32,10 @@ func _process(delta):
 		new_enemy.died.connect(EnemyDied)
 		Enemies.add_child(new_enemy)
 		enemies_to_spawn -= 1
+	
+	# Play Game Over screen
+	if emitter.health <= 0:
+		Game_Over()
 
 func AddMoney(amount):
 	money += amount
@@ -49,3 +55,10 @@ func EnemyDied(enemy):
 	if enemies == 0:
 		round += 1
 		StartRound(round)
+
+
+# This function will play out the steps for when a GameOver occurs.
+# The factors to call this function will be called in _process(delta)
+func Game_Over():
+	var game_over = $GameOver
+	game_over.show()

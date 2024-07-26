@@ -9,6 +9,7 @@ var health = 50
 var speed = 125
 
 signal died(enemy)
+var coin = preload("res://Scenes/coin.tscn")
 
 func _ready():
 	# These values need to be adjusted for the actor's speed
@@ -36,6 +37,9 @@ func set_movement_target(movement_target: Vector2):
 
 func _physics_process(delta):
 	animated_sprite.queue("flying")
+	# health -= 1 # delete this
+	if health <= 0:
+		die()
 	move(delta)
 
 func move(delta):
@@ -70,13 +74,15 @@ func takeDamage(_damage):
 		die()
 
 func die():
-	
-	drop()
+	var coin = coin.instantiate()
+	coin.global_position = global_position
+	get_parent().add_child(coin)
+	# drop_coin()
 	queue_free()
 	died.emit(self)
 	# animated_sprite.play("death")
 	
-func drop():
-	get_node("/root/Game").AddMoney(10000000000000)
+func drop_coin():
+	get_parent().AddMoney(10000000000000)
 	pass
 

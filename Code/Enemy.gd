@@ -5,14 +5,18 @@ extends "res://Code/EntityBase.gd"
 
 const damage = 50
 var health = 50
+var coin = preload("res://Scenes/coin.tscn")
 
 func _ready():
 	animated_sprite.queue("spawn")
-	if animated_sprite.animation_finished:
-		print("hey")
+	# if animated_sprite.animation_finished:
+		# print("hey")
 
 func _physics_process(delta):
 	animated_sprite.queue("flying")
+	health -= 1 # delete this
+	if health <= 0:
+		die()
 	move(delta)
 
 func move(delta):
@@ -32,11 +36,14 @@ func takeDamage(_damage):
 		die()
 
 func die():
-	drop()
+	var coin = coin.instantiate()
+	coin.global_position = global_position
+	get_parent().add_child(coin)
+	# drop_coin()
 	queue_free()
 	# animated_sprite.play("death")
 	
-func drop():
+func drop_coin():
 	get_parent().AddMoney(10000000000000)
 	pass
 

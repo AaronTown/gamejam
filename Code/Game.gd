@@ -5,7 +5,7 @@ extends Node2D
 @onready var Enemies = $Level1/Enemies
 @onready var Enemy = preload("res://Scenes/Enemy.tscn")
 
-var money : int = 0
+
 const max_energy : float = 2.0
 var round : int 
 var enemies_to_spawn : int = 0
@@ -13,6 +13,8 @@ var enemies : int
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var cursor_texture = load("res://assets/cursor.png")
+	Input.set_custom_mouse_cursor(cursor_texture)
 	randomize()
 	round = 1
 	StartRound(round)
@@ -24,7 +26,7 @@ func _ready():
 func _process(delta):
 	# money += 1
 	$HealthIndicator.energy = max_energy * (emitter.max_health - emitter.health) / emitter.max_health
-	$GUI/Money.text = ": " + str(money)
+	$GUI/Money.text = ": " + str(TotalMoney.money)
 	if enemies_to_spawn > 0:
 		var spawn = Spawners.get_children()[randi_range(0,3)].global_position
 		var new_enemy = Enemy.instantiate()
@@ -38,7 +40,7 @@ func _process(delta):
 		Game_Over()
 
 func AddMoney(amount):
-	money += amount
+	TotalMoney.money += amount
 
 func StartRound(round : int):
 	$GUI/Wave.text = "Wave: " + str(round)
@@ -60,5 +62,6 @@ func EnemyDied(enemy):
 # This function will play out the steps for when a GameOver occurs.
 # The factors to call this function will be called in _process(delta)
 func Game_Over():
+	TotalMoney.money = 0
 	var game_over = $GameOver
 	game_over.show()

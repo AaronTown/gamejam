@@ -988,7 +988,7 @@ position = Vector2(-998, 189)
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Wall" parent="." instance=ExtResource("57_dspq4")]
-position = Vector2(335, -608)
+position = Vector2(343, -598)
 scale = Vector2(10, 10)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]

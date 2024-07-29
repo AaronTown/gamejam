@@ -1,0 +1,82 @@
+[gd_scene load_steps=10 format=3 uid="uid://cwitv312keh1r"]
+
+[ext_resource type="Script" path="res://Menu.gd" id="1_56bwg"]
+[ext_resource type="Texture2D" uid="uid://doeikqf8b1007" path="res://assets/start button.png" id="2_vrl5o"]
+[ext_resource type="Texture2D" uid="uid://h5ol7sbs4qh0" path="res://assets/start text.png" id="3_ppqam"]
+[ext_resource type="Texture2D" uid="uid://c44bvlf2jbew8" path="res://assets/CreatedBy.png" id="4_kr1vu"]
+[ext_resource type="Texture2D" uid="uid://d2kh8j7xvg2hx" path="res://assets/AaronPixel.png" id="5_fuq08"]
+[ext_resource type="Texture2D" uid="uid://dk3wvkslvrfr7" path="res://assets/NickPixel.png" id="6_djt77"]
+[ext_resource type="Texture2D" uid="uid://bc08eioxj4xjp" path="res://assets/AnonPixel.png" id="7_oy5s7"]
+[ext_resource type="Texture2D" uid="uid://bj8hrc5t5wwlx" path="res://assets/JustynPixel.png" id="8_pt1h8"]
+[ext_resource type="Texture2D" uid="uid://bxtn7jj2ggiyq" path="res://assets/MarkPixel.png" id="9_wsd23"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_56bwg")
+
+[node name="Play" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = -12.0
+offset_right = 192.0
+offset_bottom = 88.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 50
+flat = true
+icon_alignment = 1
+
+[node name="StartButton" type="Sprite2D" parent="Play"]
+position = Vector2(192.5, 62.5)
+scale = Vector2(11.7812, 11.7812)
+texture = ExtResource("2_vrl5o")
+
+[node name="StartText" type="Sprite2D" parent="Play"]
+position = Vector2(200.5, 64.5)
+scale = Vector2(8.875, 8.875)
+texture = ExtResource("3_ppqam")
+
+[node name="CreatedBy" type="Sprite2D" parent="."]
+position = Vector2(80, 32)
+texture = ExtResource("4_kr1vu")
+vframes = 2
+
+[node name="Aaron" type="Sprite2D" parent="."]
+position = Vector2(96, 80)
+texture = ExtResource("5_fuq08")
+vframes = 2
+
+[node name="Nick" type="Sprite2D" parent="."]
+position = Vector2(96, 272)
+texture = ExtResource("6_djt77")
+vframes = 2
+
+[node name="Anon" type="Sprite2D" parent="."]
+position = Vector2(96, 128)
+texture = ExtResource("7_oy5s7")
+vframes = 2
+
+[node name="Justyn" type="Sprite2D" parent="."]
+position = Vector2(96, 176)
+texture = ExtResource("8_pt1h8")
+vframes = 2
+
+[node name="Mark" type="Sprite2D" parent="."]
+position = Vector2(96, 224)
+texture = ExtResource("9_wsd23")
+vframes = 2
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]

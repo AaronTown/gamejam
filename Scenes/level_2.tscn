@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://cqb14htelik27"]
+[gd_scene load_steps=33 format=3 uid="uid://c4dolefo0eqbs"]
 
 [ext_resource type="Texture2D" uid="uid://dub2jjk4ng8ie" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/1 Tiles/Map_tiles.png" id="1_2fply"]
 [ext_resource type="PackedScene" uid="uid://cwsmlam5oq3gc" path="res://Scenes/Emitter.tscn" id="2_1fwti"]
@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bcelhst33nywp" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Grass/6.png" id="8_vxsxr"]
 [ext_resource type="Texture2D" uid="uid://d25usm8yeajqq" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Grass/9.png" id="9_f611m"]
 [ext_resource type="Texture2D" uid="uid://cfif3h8ql5exe" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Houses/4.png" id="13_c1vom"]
-[ext_resource type="PackedScene" uid="uid://jlnyba7p7v11" path="res://Scenes/aux_emitter.tscn" id="16_erkyx"]
+[ext_resource type="PackedScene" uid="uid://blhntoulpandp" path="res://Scenes/aux_emitter.tscn" id="16_erkyx"]
 [ext_resource type="PackedScene" uid="uid://c0fqi54flgo26" path="res://Scenes/Reflector.tscn" id="17_niadk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j0sxi"]

@@ -71,6 +71,8 @@ shape = SubResource("CircleShape2D_dcxjl")
 shape = SubResource("CircleShape2D_dcxjl")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(4, 4)
+energy = 0.5
 texture = SubResource("GradientTexture2D_88bxn")
 texture_scale = 4.33
 

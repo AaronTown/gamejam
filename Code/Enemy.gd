@@ -7,6 +7,9 @@ extends "res://Code/EntityBase.gd"
 const damage = 50
 var health = 50
 var speed = 125
+var type : Color = Color.RED
+var hit_by = [0,0,0]
+
 
 signal died(enemy)
 var coin = preload("res://Scenes/coin.tscn")
@@ -16,7 +19,7 @@ func _ready():
 	# and the navigation layout.
 	navigation_agent.path_desired_distance = 4.0
 	navigation_agent.target_desired_distance = 4.0
-
+	set_modulate(type.inverted())
 	# Make sure to not await during _ready.
 	call_deferred("actor_setup")
 	animated_sprite.queue("spawn")
@@ -52,23 +55,49 @@ func move(delta):
 	var collision = move_and_collide(velocity * delta)
 	if collision:
 		var collider = collision.get_collider()
-		if collider.name == "Emitter":
+		if collider.name.begins_with("Emitter") or collider.name.begins_with("SmallEmitter") or collider.name.begins_with("Reflector"):
 			collider.damage(damage)
 			die()
 
 func GetTarget():
 	var closest = emitter
 	var distance = global_position.distance_squared_to(closest.global_position)
-	for tower in get_node("/root/Game/Level1/Emitters").get_children():
-		print(tower, tower.global_position)
-		print(global_position)
+	var towers = get_node("/root/Game/Level1/Emitters").get_children() + get_node("/root/Game/Level1/Reflectors").get_children()
+	for tower in towers:
 		var towerDistance = global_position.distance_squared_to(tower.global_position)
 		if  towerDistance < distance:
 			closest = tower
 			distance = towerDistance
 	return closest
 
-func takeDamage(_damage):
+func resist(_type):
+	if _type == type:
+		return
+	if _type == Color.RED:
+		hit_by[0] = hit_by[0] + 1
+	elif _type == Color.GREEN:
+		hit_by[1] = hit_by[1] + 1
+	elif _type == Color.BLUE:
+		hit_by[2] = hit_by[2] + 1
+
+func removeResist(_type):
+	if _type == type:
+		return
+	if _type == Color.RED:
+		hit_by[0] = hit_by[0] - 1
+	elif _type == Color.GREEN:
+		hit_by[1] = hit_by[1] - 1
+	elif _type == Color.BLUE:
+		hit_by[2] = hit_by[2] - 1
+
+func takeDamage(_damage, _type):
+	#resist(_type)
+	if type != Color.WHITE:
+		if _type != type:
+			return
+		for color in hit_by:
+			if hit_by:
+				_damage -= _damage/2
 	health -= _damage
 	if health <= 0:
 		die()

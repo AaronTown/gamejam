@@ -7,14 +7,16 @@ extends Area2D
 @export var rot = 0
 
 var damage = 100
-
+var type : Color = Color.RED
 const Enemy = preload("res://Code/Enemy.gd")
-var enemies = []
+var enemies = {}
 var cooldown : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#updateCollision()
+	$PointLight2D.color = type
+	
 	call_deferred("updateCollision")
 	pass # Replace with function body.
 
@@ -45,15 +47,20 @@ func _physics_process(delta):
 		var result = space_state.intersect_ray(query)
 		if result:
 			if result.collider.name == "Wall" and global_position.distance_to(result.position) < global_position.distance_to(enemy.global_position):
-				pass
+				enemies[enemy] = false
+				enemy.removeResist(type)
 			else:
-				enemy.takeDamage(damage)
+				if not enemies[enemy]:
+					enemies[enemy] = true
+					enemy.resist(type)
+				enemy.takeDamage(damage, type)
 	cooldown = true
 
 func _on_body_entered(body):
 	if body is Enemy:
-
-		enemies.append(body)
+		body.resist(type)
+		enemies[body] = true
+		#enemies.append(body)
 	pass # Replace with function body.
 
 
@@ -67,5 +74,11 @@ func _on_damage_timer_timeout():
 
 func _on_body_exited(body):
 	if body is Enemy:
+		if enemies[body]:
+			body.removeResist(type)
 		enemies.erase(body)
 	pass # Replace with function body.
+
+func ChangeType(_type):
+	type = _type
+	$PointLight2D.color = _type

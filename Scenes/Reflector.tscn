@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://c0fqi54flgo26"]
+[gd_scene load_steps=12 format=3 uid="uid://c0fqi54flgo26"]
 
 [ext_resource type="Script" path="res://Code/Reflector.gd" id="1_ejwjw"]
-[ext_resource type="Texture2D" uid="uid://bsf0t1wymy5jx" path="res://assets/Reflector.png" id="2_w0v5w"]
+[ext_resource type="Texture2D" uid="uid://6y7jpo0qkvcu" path="res://assets/Reflector.png" id="2_w0v5w"]
+[ext_resource type="PackedScene" uid="uid://csmprn2qodqg1" path="res://Scenes/Light.tscn" id="3_3x5da"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7abq7"]
 radius = 15.0333
@@ -70,8 +71,12 @@ autoplay = "default"
 frame_progress = 0.14156
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(0.25, 0.25)
 texture = SubResource("GradientTexture2D_yylfd")
 texture_scale = 4.33
+
+[node name="Light" parent="." instance=ExtResource("3_3x5da")]
+visible = false
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

@@ -6,7 +6,7 @@ extends Node2D
 const max_health : int = 100
 var health : int = max_health
 var direction
-
+var type : Color = Color.WHITE
 var lightOb
 
 var tick = 0
@@ -16,6 +16,7 @@ func _ready():
 	lightOb = Light.instantiate()
 	lightOb.damage = 10
 	add_child(lightOb)
+	ChangeType(Color.BLUE)
 	pass
 
 
@@ -45,8 +46,14 @@ func target():
 
 func damage(_damage):
 	health -= _damage
-	if health < 0:
-		health = 0
+	if health <= 0:
+		queue_free()
+		#health = 0
+
+func ChangeType(_type : Color):
+	type = _type
+	lightOb.ChangeType(type)
+	$PointLight2D.color = type
 
 #func _on_hitbox_body_entered(body):
 	#if body.is_in_group("Enemy"):

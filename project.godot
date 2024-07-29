@@ -17,11 +17,12 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-TotalMoney="*res://Scenes/TotalMoney.gd"
+TotalMoney="*res://Code/TotalMoney.gd"
 
 [display]
 
-window/size/mode=2
+window/size/viewport_height=595
+window/size/resizable=false
 
 [editor_plugins]
 

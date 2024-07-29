@@ -1,19 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://csmprn2qodqg1"]
+[gd_scene load_steps=3 format=3 uid="uid://csmprn2qodqg1"]
 
 [ext_resource type="Script" path="res://Code/Light.gd" id="1_3a6s1"]
-
-[sub_resource type="Gradient" id="Gradient_xgwju"]
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_lm50i"]
-gradient = SubResource("Gradient_xgwju")
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_0ryui"]
-polygon = PackedVector2Array(-50, -10, 10.0192, -10.6124, 48, -11, 49, -43, -51, -39)
+[ext_resource type="Texture2D" uid="uid://c4uqhpvu21072" path="res://assets/pixil-frame-0_11.png" id="2_psgr0"]
 
 [node name="Light" type="Area2D"]
+scale = Vector2(2, 1)
 collision_mask = 7
 script = ExtResource("1_3a6s1")
 strength = 225
@@ -22,32 +13,18 @@ angle = 37
 rot = 52
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(196.238, 0)
-scale = Vector2(1.8745, 1)
-polygon = PackedVector2Array(0, 0, 748, -192, 748, 241)
+position = Vector2(-106.5, 21)
+scale = Vector2(1.44257, 3.91345)
+polygon = PackedVector2Array(73.8267, -5.36611, 433.948, -73.0813, 433.948, 64.6488)
 
 [node name="DamageTimer" type="Timer" parent="."]
 wait_time = 0.5
 autostart = true
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(0.250024, 0)
-scale = Vector2(50, 50)
 shadow_enabled = true
-texture = SubResource("GradientTexture2D_lm50i")
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-position = Vector2(4, -9)
-occluder = SubResource("OccluderPolygon2D_0ryui")
-
-[node name="LightOccluder2D3" type="LightOccluder2D" parent="."]
-position = Vector2(-67, -2)
-rotation = 1.67552
-occluder = SubResource("OccluderPolygon2D_0ryui")
-
-[node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
-position = Vector2(3, 58)
-occluder = SubResource("OccluderPolygon2D_0ryui")
+texture = ExtResource("2_psgr0")
+offset = Vector2(300, -45)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

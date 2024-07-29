@@ -18,6 +18,8 @@ func _ready():
 	call_deferred("updateCollision")
 	pass # Replace with function body.
 
+func getCollision():
+	return $CollisionPolygon2D
 #should only happen if parent is moved or rotated
 func updateCollision():
 	#var col = get_node("CollisionPolygon2D")

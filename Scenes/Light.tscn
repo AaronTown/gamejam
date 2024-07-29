@@ -24,7 +24,7 @@ rot = 52
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(196.238, 0)
 scale = Vector2(1.8745, 1)
-polygon = PackedVector2Array(0, 0, 748, -192, 748, 241)
+polygon = PackedVector2Array(-100, 0, 748, -192, 748, 241)
 
 [node name="DamageTimer" type="Timer" parent="."]
 wait_time = 0.5

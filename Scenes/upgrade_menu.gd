@@ -19,9 +19,10 @@ func _on_button_pressed():
 	if TotalMoney.money >= 10:
 		var magnifier = Magnifier.instantiate()
 		magnifier.position = self.position
-		TotalMoney.money -= 40
+		TotalMoney.money -= 10
 		current_tower.queue_free()
 		self.visible = false
+		get_node("../../Level1/Reflectors").add_child(magnifier)
 		pass # Replace with function body.
 
 
@@ -29,7 +30,8 @@ func _on_button_2_pressed():
 	if TotalMoney.money >= 10:
 		var upgrade2 = Upgrade2.instantiate()
 		upgrade2.position = self.position
-		TotalMoney.money -= 60
+		TotalMoney.money -= 10
 		current_tower.queue_free()
 		self.visible = false
+		get_node("../../Level1/Reflectors").add_child(upgrade2)
 		pass # Replace with function body.

@@ -6,7 +6,7 @@ extends Node2D
 @onready var Enemy = preload("res://Scenes/Enemy.tscn")
 
 @onready var Reflector = preload("res://Scenes/Reflector.tscn")
-@onready var AuxEmitter = preload("res://Scenes/aux_emitter.tscn")
+@onready var AuxEmitter = preload("res://Scenes/SmallEmitter.tscn")
 
 
 const max_energy : float = 2.0
@@ -23,6 +23,8 @@ func _ready():
 	StartRound(round)
 	# Connect to coins
 	get_tree().connect("node_added", Callable(self, "_on_node_added"))
+	
+	$GUI/UpgradeMenu.visible = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -79,6 +81,19 @@ func _on_button_pressed():
 		get_node("Level1/Reflectors").add_child(reflector)
 		reflector.position = get_global_mouse_position()
 		reflector.picked_up = true
+		TotalMoney.money -= 10
+	else:
+		print("no money")
+		
+	pass # Replace with function body.
+
+
+func _on_button_2_pressed():
+	if TotalMoney.money >= 10:
+		var emitter = AuxEmitter.instantiate()
+		get_node("Level1/Emitters").add_child(emitter)
+		emitter.position = get_global_mouse_position()
+		emitter.picked_up = true
 		TotalMoney.money -= 10
 	else:
 		print("no money")

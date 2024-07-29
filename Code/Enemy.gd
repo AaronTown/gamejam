@@ -60,8 +60,8 @@ func GetTarget():
 	var closest = emitter
 	var distance = global_position.distance_squared_to(closest.global_position)
 	for tower in get_node("/root/Game/Level1/Emitters").get_children():
-		print(tower, tower.global_position)
-		print(global_position)
+		#print(tower, tower.global_position)
+		#print(global_position)
 		var towerDistance = global_position.distance_squared_to(tower.global_position)
 		if  towerDistance < distance:
 			closest = tower

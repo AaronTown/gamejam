@@ -9,7 +9,6 @@ const Light = preload("res://Code/Light.gd")
 @onready var light_scene = load("res://Scenes/Light.tscn")
 @onready var upgrade_menu_scene = load("res://Scenes/upgrade_menu.tscn")
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	input_pickable = true
 

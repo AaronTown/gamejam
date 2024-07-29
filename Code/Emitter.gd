@@ -10,6 +10,8 @@ var direction
 var lightOb
 
 var tick = 0
+
+var picked_up
  
 # Called when the node enters the scene tree for the first time.
 func _ready():

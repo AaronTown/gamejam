@@ -4,6 +4,8 @@ extends Node2D
 @onready var Spawners = $Level1/Spawners
 @onready var Enemies = $Level1/Enemies
 @onready var Enemy = preload("res://Scenes/Enemy.tscn")
+@onready var SmallEmitter = preload("res://Scenes/SmallEmitter.tscn")
+@onready var Reflector = preload("res://Scenes/Reflector.tscn")
 
 
 const max_energy : float = 2.0
@@ -11,7 +13,7 @@ var round : int
 var enemies_to_spawn : int = 0
 var enemies : int 
 var thematic_darkness = .1
-
+var round_active = false
 #signal round_start(round)
 
 # Called when the node enters the scene tree for the first time.
@@ -64,8 +66,9 @@ func EnemyDied(enemy):
 	enemy.died.disconnect(EnemyDied)
 	enemies -= 1
 	if enemies == 0:
-		round += 1
-		StartRound(round)
+		round_active = false
+		#round += 1
+		#StartRound(round)
 
 
 # This function will play out the steps for when a GameOver occurs.
@@ -74,3 +77,19 @@ func Game_Over():
 	TotalMoney.money = 0
 	var game_over = $GameOver
 	game_over.show()
+	
+
+func PlaceTower(tower_to_place, tower_position):
+	print(tower_position)
+	if tower_to_place == "SmallEmitter":
+		var new_tower = SmallEmitter.instantiate()
+		$Level1/Emitters.add_child(new_tower)
+		new_tower.global_position = tower_position
+		print(new_tower.position)
+		
+	elif tower_to_place == "Reflector":
+		var new_tower = Reflector.instantiate()
+		$Level1/Reflectors.add_child(new_tower)
+		new_tower.global_position = tower_position
+		
+		

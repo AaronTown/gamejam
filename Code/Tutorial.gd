@@ -28,7 +28,7 @@ func TutorialStep(round):
 	show()
 	match round:
 		1:
-			print(round)
+			#print(round)
 			RunDialogue(dialogue.slice(0,3))
 		2: 
 			RunDialogue(dialogue.slice(4,9))
@@ -41,7 +41,7 @@ func TutorialStep(round):
 
 func RunDialogue(text):
 	for line in text:
-		print(line)
+		#print(line)
 		$Label.text = line
 		await next
 	#get_parent().get_node("Level1").paused = false
@@ -54,5 +54,5 @@ func _process(delta):
 
 
 func _on_button_pressed():
-	print("pressed")
+	#print("pressed")
 	next.emit()

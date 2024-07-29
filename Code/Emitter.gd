@@ -17,7 +17,7 @@ func _ready():
 	lightOb = Light.instantiate()
 	lightOb.damage = 100
 	add_child(lightOb)
-	ChangeType(Color.RED)
+	#ChangeType(Color.RED)
 	pass
 
 
@@ -44,6 +44,7 @@ func _process(delta):
 
 
 func damage(_damage):
+	print(health)
 	health -= _damage
 	if health < 0:
 		health = 0

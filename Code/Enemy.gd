@@ -4,10 +4,10 @@ extends "res://Code/EntityBase.gd"
 @onready var emitter = get_node("/root/Game").emitter
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
 
-const damage = 50
+const damage = 5
 var health = 50
-var speed = 125
-var type : Color = Color.RED
+var speed = 75
+var type : Color = Color.WHITE
 var hit_by = [0,0,0]
 
 

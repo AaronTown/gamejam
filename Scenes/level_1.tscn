@@ -1,4 +1,4 @@
-[gd_scene load_steps=113 format=3 uid="uid://cpperhtev6wpe"]
+[gd_scene load_steps=110 format=3 uid="uid://cpperhtev6wpe"]
 
 [ext_resource type="Texture2D" uid="uid://dub2jjk4ng8ie" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/1 Tiles/Map_tiles.png" id="1_d50qo"]
 [ext_resource type="Texture2D" uid="uid://cee8247egblhg" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Trees/9.png" id="2_sln6u"]
@@ -21,7 +21,6 @@
 [ext_resource type="Texture2D" uid="uid://q6wjimxc3b18" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Trees/8.png" id="10_j01aw"]
 [ext_resource type="Texture2D" uid="uid://mkp1mddxi6vu" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/5 Shadows/r1.png" id="11_xwf34"]
 [ext_resource type="Texture2D" uid="uid://d3d5rn60wxq2y" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/5 Shadows/r2.png" id="13_df164"]
-[ext_resource type="PackedScene" uid="uid://c0fqi54flgo26" path="res://Scenes/Reflector.tscn" id="14_5wx33"]
 [ext_resource type="Texture2D" uid="uid://cl435s4bo0tib" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/5 Shadows/r3.png" id="14_8ep1s"]
 [ext_resource type="Texture2D" uid="uid://cg8tjmlrh8dxj" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/5 Shadows/r4.png" id="15_sw1ls"]
 [ext_resource type="Texture2D" uid="uid://csynkjqvrg4ph" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/5 Shadows/r5.png" id="16_44td5"]
@@ -55,8 +54,6 @@
 [ext_resource type="Texture2D" uid="uid://b1houkee6ievk" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Houses/5.png" id="47_uyvnn"]
 [ext_resource type="Texture2D" uid="uid://bmbkftsj6ay7r" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Houses/6.png" id="48_ykniw"]
 [ext_resource type="Texture2D" uid="uid://cfif3h8ql5exe" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Houses/4.png" id="49_wosyf"]
-[ext_resource type="PackedScene" uid="uid://cticiptg3al5b" path="res://Scenes/SmallEmitter.tscn" id="56_3vk6i"]
-[ext_resource type="PackedScene" uid="uid://c2tr4br53qk37" path="res://Scenes/Wall.tscn" id="57_dspq4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j8umw"]
 texture = ExtResource("1_d50qo")
@@ -954,22 +951,10 @@ position = Vector2(-61, -256)
 [node name="Reflectors" type="Node2D" parent="."]
 position = Vector2(505, -241)
 
-[node name="Reflector" parent="Reflectors" instance=ExtResource("14_5wx33")]
-position = Vector2(-1277, -90)
-
-[node name="Reflector2" parent="Reflectors" instance=ExtResource("14_5wx33")]
-position = Vector2(-618, 128)
-
-[node name="Reflector3" parent="Reflectors" instance=ExtResource("14_5wx33")]
-position = Vector2(108, 278)
-
 [node name="Emitters" type="Node2D" parent="."]
 
 [node name="Emitter" parent="Emitters" instance=ExtResource("3_v2c3n")]
 position = Vector2(-70, 170)
-
-[node name="SmallEmitter" parent="Emitters" instance=ExtResource("56_3vk6i")]
-position = Vector2(436, -40)
 
 [node name="Spawners" type="Node2D" parent="."]
 
@@ -986,10 +971,6 @@ position = Vector2(884, -499)
 position = Vector2(-998, 189)
 
 [node name="Enemies" type="Node2D" parent="."]
-
-[node name="Wall" parent="." instance=ExtResource("57_dspq4")]
-position = Vector2(343, -598)
-scale = Vector2(10, 10)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 

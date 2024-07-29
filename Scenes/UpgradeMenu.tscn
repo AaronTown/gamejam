@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://s61m6oskqc5n"]
+
+[ext_resource type="Script" path="res://Code/TowerMenu.gd" id="1_hcw4k"]
+[ext_resource type="Texture2D" uid="uid://cm5521bbg0sen" path="res://assets/menuicon.png" id="2_rnfbc"]
+[ext_resource type="Texture2D" uid="uid://ltqinjlblmiv" path="res://assets/EmitterSmall.png" id="3_vv4sc"]
+[ext_resource type="Texture2D" uid="uid://bsf0t1wymy5jx" path="res://assets/Reflector.png" id="4_mwmp7"]
+
+[node name="TowerMenu" type="Control"]
+light_mask = 0
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_hcw4k")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+offset_right = 40.0
+offset_bottom = 40.0
+icon = ExtResource("2_rnfbc")
+flat = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Button"]
+position = Vector2(21, 18)
+scale = Vector2(0.190625, 0.1625)
+texture = ExtResource("3_vv4sc")
+hframes = 4
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 2
+offset_left = 34.0
+offset_right = 74.0
+offset_bottom = 40.0
+icon = ExtResource("2_rnfbc")
+flat = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Button2"]
+position = Vector2(20, 20)
+scale = Vector2(0.15, 0.1375)
+texture = ExtResource("4_mwmp7")
+hframes = 4
+
+[node name="Button3" type="Button" parent="."]
+visible = false
+layout_mode = 2
+offset_left = 68.0
+offset_right = 108.0
+offset_bottom = 40.0
+icon = ExtResource("2_rnfbc")
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

@@ -17,8 +17,8 @@ func _on_mouse_entered():
 func collect():
 	
 	TotalMoney.money += value
-	print(TotalMoney.money)
-	print("Coin collected!")  # Debug print
+	#print(TotalMoney.money)
+	#print("Coin collected!")  # Debug print
 	
 	emit_signal("coin_collected", value)
 	stop() 						# stops animation of sprite

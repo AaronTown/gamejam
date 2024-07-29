@@ -7,7 +7,7 @@ extends Area2D
 @export var rot = 0
 
 var damage = 100
-var type : Color = Color.RED
+var type : Color = Color.WHITE
 const Enemy = preload("res://Code/Enemy.gd")
 var enemies = {}
 var cooldown : bool = false

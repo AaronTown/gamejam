@@ -16,7 +16,7 @@ func _ready():
 	lightOb = Light.instantiate()
 	lightOb.damage = 10
 	add_child(lightOb)
-	ChangeType(Color.BLUE)
+	#ChangeType(Color.BLUE)
 	pass
 
 
@@ -26,6 +26,11 @@ func _unhandled_input(event):
 		#$Beam.show()
 		#await get_tree().create_timer(0.4).timeout
 		#$Beam.hide()
+	if event.is_action("Click"):
+		if global_position.distance_to(get_global_mouse_position()) < 50:
+			$UpgradeMenu.show()
+		else:
+			$UpgradeMenu.hide()
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_WHEEL_UP:
 			lightOb.range += 1

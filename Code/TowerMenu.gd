@@ -51,3 +51,15 @@ func _on_button_2_pressed():
 	Input.set_custom_mouse_cursor($Button2/Sprite2D.texture)
 	tower_picked = true
 	tower_to_place = "Reflector"
+
+
+func _on_red_pressed():
+	get_parent().ChangeType(Color.RED)
+
+
+func _on_blue_pressed():
+	get_parent().ChangeType(Color.BLUE)
+
+
+func _on_green_pressed():
+	get_parent().ChangeType(Color.GREEN)

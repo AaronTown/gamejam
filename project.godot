@@ -15,6 +15,12 @@ run/main_scene="res://Scenes/Game.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=990
+window/size/initial_position=Vector2i(-75, -205)
+
 [input]
 
 Shoot={

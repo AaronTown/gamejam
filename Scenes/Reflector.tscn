@@ -42,7 +42,7 @@ animations = [{
 "speed": 2.0
 }]
 
-[node name="Reflector" type="AnimatableBody2D"]
+[node name="Reflector" type="CharacterBody2D"]
 script = ExtResource("1_ejwjw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

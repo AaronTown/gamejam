@@ -1,11 +1,13 @@
-extends AnimatableBody2D
+extends CharacterBody2D
 
-var pickedUp = false
-var lightOb
-var receivedLights = [] # im bad at naming variables
+var picked_up = false
+var light_object
+var received_lights = [] # im bad at naming variables
+var disabled_lights = []
 
 const Light = preload("res://Code/Light.gd")
-@onready var lightscene = load("res://Scenes/Light.tscn")
+@onready var light_scene = load("res://Scenes/Light.tscn")
+@onready var tower_menu_scene = load("res://Scenes/tower_menu.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,37 +15,82 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if pickedUp:
-		self.position = get_global_mouse_position()
+	if picked_up:
+		var current_position = self.global_position
+		var mouse_position = get_global_mouse_position()
+		
+		var distance = current_position.distance_to(mouse_position)
+		if distance > 80:
+			position = mouse_position
+			return
+		var direction = current_position.direction_to(mouse_position)
+
+		var speed = distance / delta
+		velocity = direction * speed
+		
+		move_and_slide()
 
 func _on_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
-			pickedUp = !pickedUp
+			picked_up = !picked_up
+		if event.button_index == MOUSE_BUTTON_RIGHT and event.is_pressed():
+			showTowerMenu()
 		if event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
 			self.rotation += 0.1
+			checkLightValidity()
 		if event.button_index == MOUSE_BUTTON_WHEEL_UP:
 			self.rotation -= 0.1
+			checkLightValidity()
 
-func createLight(area):
-	print("reflector has entered light area")
-	lightOb = lightscene.instantiate()
-	lightOb.damage = 10
-	lightOb.angle = area.angle / 2
-	lightOb.range = area.range * 2/3
+func showTowerMenu():
+	var tower_menu = tower_menu_scene.instantiate()
+	add_child(tower_menu)
+
+func checkLightValidity():
+	var update_flag = false
+	for light in received_lights:
+		if isFacingAway(light, self):
+			update_flag = true
+	if update_flag:
+		updateLight()
 	
-	add_child(lightOb)
 
+func updateLight():
+	# delete own light object, accumulate and average received_lights values, create new light
+	if light_object != null:
+		light_object.queue_free()
+	if received_lights.is_empty():
+		return
+		
+	#var strength = 0
+	var angle = 0
+	var range = 0
+	for light in received_lights:
+		if isFacingAway(light, self):
+			continue
+		angle += light.angle
+		range += light.range
+	
+	light_object = light_scene.instantiate()
+	var num_lights = received_lights.size()
+	light_object.angle = angle / num_lights / 2
+	light_object.range = range / num_lights * 2/3
+	
+	add_child(light_object)
+	
+func isFacingAway(a, b):
+	var diff = a.rotation - b.rotation
+	return abs(diff) > 1.3
+	
 func _on_area_2d_area_entered(area):
 	if area is Light:
-		if lightOb == null:
-			receivedLights.append(area)
-			call_deferred("createLight", area)
+		if area != light_object:
+			received_lights.append(area)
+			call_deferred("updateLight")
 
 func _on_area_2d_area_exited(area):
 	if area is Light:
-		receivedLights.erase(area)
-		if receivedLights.is_empty():
-			#return
-			if lightOb != null:
-				lightOb.queue_free()
+		if area != light_object:
+			received_lights.erase(area)
+			call_deferred("updateLight")

@@ -1,14 +1,9 @@
-
 [gd_scene load_steps=2 format=3 uid="uid://csmprn2qodqg1"]
 
 [ext_resource type="Script" path="res://Code/Light.gd" id="1_3a6s1"]
 
 [node name="Light" type="Area2D"]
 script = ExtResource("1_3a6s1")
-strength = 225
-range = 370
-angle = 37
-rot = 52
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(0, 0, 200, -80, 200, 80)
@@ -20,4 +15,3 @@ autostart = true
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
 [connection signal="timeout" from="DamageTimer" to="." method="_on_damage_timer_timeout"]
-

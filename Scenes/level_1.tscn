@@ -952,16 +952,12 @@ layer_2/tile_data = PackedInt32Array(851956, 851968, 22, 917492, 851968, 23, 851
 position = Vector2(-61, -256)
 
 [node name="Reflectors" type="Node2D" parent="."]
-position = Vector2(505, -241)
-
-[node name="Reflector" parent="Reflectors" instance=ExtResource("14_5wx33")]
-position = Vector2(-1277, -90)
 
 [node name="Reflector2" parent="Reflectors" instance=ExtResource("14_5wx33")]
 position = Vector2(-618, 128)
 
 [node name="Reflector3" parent="Reflectors" instance=ExtResource("14_5wx33")]
-position = Vector2(108, 278)
+position = Vector2(274, -191)
 
 [node name="Emitters" type="Node2D" parent="."]
 

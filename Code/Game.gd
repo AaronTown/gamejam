@@ -5,6 +5,9 @@ extends Node2D
 @onready var Enemies = $Level1/Enemies
 @onready var Enemy = preload("res://Scenes/Enemy.tscn")
 
+@onready var Reflector = preload("res://Scenes/Reflector.tscn")
+@onready var AuxEmitter = preload("res://Scenes/aux_emitter.tscn")
+
 
 const max_energy : float = 2.0
 var round : int 
@@ -41,6 +44,9 @@ func _process(delta):
 
 func AddMoney(amount):
 	TotalMoney.money += amount
+	
+func getUpgradeMenu():
+	return $GUI/UpgradeMenu
 
 func StartRound(round : int):
 	$GUI/Wave.text = "Wave: " + str(round)
@@ -65,3 +71,16 @@ func Game_Over():
 	TotalMoney.money = 0
 	var game_over = $GameOver
 	game_over.show()
+
+
+func _on_button_pressed():
+	if TotalMoney.money >= 10:
+		var reflector = Reflector.instantiate()
+		get_node("Level1/Reflectors").add_child(reflector)
+		reflector.position = get_global_mouse_position()
+		reflector.picked_up = true
+		TotalMoney.money -= 10
+	else:
+		print("no money")
+		
+	pass # Replace with function body.

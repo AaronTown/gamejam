@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://d3y6ef8lhicea"]
+[gd_scene load_steps=8 format=3 uid="uid://d3y6ef8lhicea"]
 
 [ext_resource type="Script" path="res://Code/Game.gd" id="1_wtn4q"]
 [ext_resource type="Texture2D" uid="uid://cao75r160q4cv" path="res://assets/coin.png" id="2_20p20"]
 [ext_resource type="PackedScene" uid="uid://cpperhtev6wpe" path="res://Scenes/level_1.tscn" id="2_fciqn"]
-[ext_resource type="PackedScene" path="res://Scenes/game_over.tscn" id="4_w3nja"]
+[ext_resource type="PackedScene" uid="uid://y1iquv5sujf0" path="res://Scenes/upgrade_menu.tscn" id="3_2pcyw"]
+[ext_resource type="PackedScene" uid="uid://1snjo1ortl68" path="res://Scenes/game_over.tscn" id="4_w3nja"]
 
 [sub_resource type="Gradient" id="Gradient_t2jg5"]
 
@@ -56,6 +57,57 @@ scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_20p20")
 hframes = 4
 
+[node name="Control" type="Control" parent="GUI"]
+anchors_preset = 0
+offset_left = -1009.0
+offset_top = -199.0
+offset_right = -833.0
+offset_bottom = 369.0
+
+[node name="VFlowContainer" type="VFlowContainer" parent="GUI/Control"]
+layout_mode = 0
+offset_right = 26.0
+offset_bottom = 75.0
+scale = Vector2(6.615, 6.615)
+
+[node name="HFlowContainer" type="HFlowContainer" parent="GUI/Control/VFlowContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="GUI/Control/VFlowContainer/HFlowContainer"]
+layout_mode = 2
+
+[node name="HFlowContainer2" type="HFlowContainer" parent="GUI/Control/VFlowContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+
+[node name="Button2" type="Button" parent="GUI/Control/VFlowContainer/HFlowContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GUI/Control"]
+layout_mode = 2
+offset_left = 75.0
+offset_top = 9.0
+offset_right = 123.0
+offset_bottom = 32.0
+text = "100"
+
+[node name="Label2" type="Label" parent="GUI/Control"]
+layout_mode = 2
+offset_left = 75.0
+offset_top = 92.0
+offset_right = 123.0
+offset_bottom = 116.0
+text = "400"
+
+[node name="UpgradeMenu" parent="GUI" instance=ExtResource("3_2pcyw")]
+offset_left = -879.0
+offset_top = 98.0
+offset_right = -860.0
+offset_bottom = 106.0
+
 [node name="Level1" parent="." instance=ExtResource("2_fciqn")]
 
 [node name="GameOver" parent="." instance=ExtResource("4_w3nja")]
+
+[connection signal="pressed" from="GUI/Control/VFlowContainer/HFlowContainer/Button" to="." method="_on_button_pressed"]

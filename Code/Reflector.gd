@@ -1,13 +1,13 @@
 extends CharacterBody2D
 
-var picked_up = false
+var picked_up
 var light_object
 var received_lights = [] # im bad at naming variables
 var disabled_lights = []
 
 const Light = preload("res://Code/Light.gd")
 @onready var light_scene = load("res://Scenes/Light.tscn")
-@onready var tower_menu_scene = load("res://Scenes/tower_menu.tscn")
+@onready var upgrade_menu_scene = load("res://Scenes/upgrade_menu.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -33,19 +33,26 @@ func _process(delta):
 func _on_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
-			picked_up = !picked_up
+			picked_up = false
 		if event.button_index == MOUSE_BUTTON_RIGHT and event.is_pressed():
 			showTowerMenu()
 		if event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
 			self.rotation += 0.1
+			$AnimatedSprite2D.rotation -= 0.1
 			checkLightValidity()
 		if event.button_index == MOUSE_BUTTON_WHEEL_UP:
 			self.rotation -= 0.1
+			$AnimatedSprite2D.rotation += 0.1
 			checkLightValidity()
 
 func showTowerMenu():
-	var tower_menu = tower_menu_scene.instantiate()
-	add_child(tower_menu)
+	var upgradeMenu = get_tree().get_root().get_node("Game/GUI/UpgradeMenu") #im sorry
+	upgradeMenu.visible = true
+	upgradeMenu.position = get_global_mouse_position()
+	upgradeMenu.current_tower = self
+	
+	
+	#add_child(upgrade_menu)
 
 func checkLightValidity():
 	var update_flag = false
@@ -89,6 +96,8 @@ func isFacingAway(a, b):
 	return abs(diff) > 1.3
 
 func _on_area_2d_area_entered(area):
+	if picked_up:
+		return
 	if area is Light:
 		if area != light_object:
 			received_lights.append(area)

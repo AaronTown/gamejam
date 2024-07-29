@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://cticiptg3al5b"]
 
 [ext_resource type="Script" path="res://Code/SmallEmitter.gd" id="1_vjr8h"]
-[ext_resource type="Texture2D" uid="uid://fvrjn43g8x6v" path="res://assets/EmitterSmall.png" id="2_0wvvp"]
+[ext_resource type="Texture2D" uid="uid://ltqinjlblmiv" path="res://assets/EmitterSmall.png" id="2_0wvvp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8xxgd"]
 radius = 216.005

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://c4dolefo0eqbs"]
+[gd_scene load_steps=33 format=3 uid="uid://cmhpgxknby3ns"]
 
 [ext_resource type="Texture2D" uid="uid://dub2jjk4ng8ie" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/1 Tiles/Map_tiles.png" id="1_2fply"]
 [ext_resource type="PackedScene" uid="uid://cwsmlam5oq3gc" path="res://Scenes/Emitter.tscn" id="2_1fwti"]

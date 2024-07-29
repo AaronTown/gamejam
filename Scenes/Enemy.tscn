@@ -225,5 +225,3 @@ libraries = {
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." index="3"]
 avoidance_enabled = true
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="4"]

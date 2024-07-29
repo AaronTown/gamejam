@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://csmprn2qodqg1"]
 
 [ext_resource type="Script" path="res://Code/Light.gd" id="1_3a6s1"]
-[ext_resource type="Texture2D" uid="uid://c4uqhpvu21072" path="res://assets/pixil-frame-0_11.png" id="2_psgr0"]
+[ext_resource type="Texture2D" uid="uid://c4uqhpvu21072" path="res://assets/pixil-frame-0_11.png" id="2_4jdnx"]
 
 [node name="Light" type="Area2D"]
-scale = Vector2(2, 1)
+scale = Vector2(0.1, 0.05)
 collision_mask = 7
 script = ExtResource("1_3a6s1")
 strength = 225
@@ -13,18 +13,24 @@ angle = 37
 rot = 52
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(-106.5, 21)
-scale = Vector2(1.44257, 3.91345)
-polygon = PackedVector2Array(73.8267, -5.36611, 433.948, -73.0813, 433.948, 64.6488)
+position = Vector2(-3558, -223)
+scale = Vector2(58.7618, 450.647)
+polygon = PackedVector2Array(60.5665, 0.490406, 498.742, -28.1617, 498.453, 28.6655)
 
 [node name="DamageTimer" type="Timer" parent="."]
 wait_time = 0.5
 autostart = true
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0.250024, 0)
+scale = Vector2(50, 50)
+energy = 2.3
 shadow_enabled = true
-texture = ExtResource("2_psgr0")
+texture = ExtResource("2_4jdnx")
 offset = Vector2(300, -45)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.306923, 0.306923, 0.306923, 1)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

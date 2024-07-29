@@ -2,7 +2,7 @@ extends Control
 
 signal next
 
-var dialogue = ["Welcome to gamename, a tower defense game about utilizing the qualities of light to defeat the oncoming waves of darkness!",
+var dialogue = ["Welcome to Prismatic, a tower defense game about utilizing the qualities of light to defeat the oncoming waves of darkness!",
 			"In this quick tutorial you will be guided on how to destroy the first few waves of the enemy, Shadow Moths!",
 			"You will start each level with a Main Emitter, this is your final bastion and primary weapon against your foe! You can use your mouse to aim your beam of light. Remember the closer the shadow is to the light the more quickly the shadow will be illuminated!",
 			"Quick here comes some now!",
@@ -24,7 +24,7 @@ func _ready():
 
 func TutorialStep(round):
 	#get_parent().get_node("Level1").paused = true
-	get_node("/root").get_tree().paused = true
+	#get_node("/root").get_tree().paused = true
 	show()
 	match round:
 		1:
@@ -45,7 +45,7 @@ func RunDialogue(text):
 		$Label.text = line
 		await next
 	#get_parent().get_node("Level1").paused = false
-	get_node("/root").get_tree().paused = false
+	#get_node("/root").get_tree().paused = false
 	hide()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

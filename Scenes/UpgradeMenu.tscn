@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://s61m6oskqc5n"]
 
-[ext_resource type="Script" path="res://Code/TowerMenu.gd" id="1_hcw4k"]
+[ext_resource type="Script" path="res://Code/UpgradeMenu.gd" id="1_5wr0p"]
 [ext_resource type="Texture2D" uid="uid://cm5521bbg0sen" path="res://assets/menuicon.png" id="2_rnfbc"]
 [ext_resource type="Texture2D" uid="uid://ltqinjlblmiv" path="res://assets/EmitterSmall.png" id="3_vv4sc"]
 [ext_resource type="Texture2D" uid="uid://bsf0t1wymy5jx" path="res://assets/Reflector.png" id="4_mwmp7"]
@@ -10,8 +10,12 @@
 light_mask = 0
 layout_mode = 3
 anchors_preset = 0
+offset_left = -164.0
+offset_top = -231.0
+offset_right = -164.0
+offset_bottom = -231.0
 scale = Vector2(3, 3)
-script = ExtResource("1_hcw4k")
+script = ExtResource("1_5wr0p")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 2

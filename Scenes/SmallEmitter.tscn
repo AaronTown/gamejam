@@ -86,9 +86,9 @@ texture_scale = 4.33
 
 [node name="UpgradeMenu" parent="." instance=ExtResource("3_sa3ec")]
 visible = false
-offset_left = 56.0
-offset_top = 4.0
-offset_right = 56.0
-offset_bottom = 4.0
+offset_left = -162.0
+offset_top = -234.0
+offset_right = -162.0
+offset_bottom = -234.0
 
 [connection signal="body_entered" from="ViewBox" to="." method="_on_hitbox_body_entered"]

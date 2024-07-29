@@ -85,6 +85,7 @@ func updateLight():
 	for light in received_lights:
 		#if isFacingAway(light, self):
 		#	continue
+		print(light.type)
 		angle += light.angle
 		range += light.range
 		new_type += light.type / num_lights

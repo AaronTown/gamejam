@@ -21,27 +21,29 @@ func _ready():
 
 
 func _unhandled_input(event):
+	if get_node("/root/Game").round_active or global_position.distance_to(get_global_mouse_position()) > 50:
+		$UpgradeMenu.hide()
+		return
 	#if event.is_action("Shoot"):
 #
 		#$Beam.show()
 		#await get_tree().create_timer(0.4).timeout
 		#$Beam.hide()
-	if event.is_action("Click"):
-		if global_position.distance_to(get_global_mouse_position()) < 50:
-			$UpgradeMenu.show()
-		else:
-			$UpgradeMenu.hide()
+	if event.is_action("Click") and get_node("/root/Game").colors_active:
+		$UpgradeMenu.show()
+			
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_WHEEL_UP:
-			lightOb.range += 1
+			lightOb.rotation += 0.1
 		if event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
-			lightOb.range -= 1
+			lightOb.rotation -= 0.1
 	  
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	direction = global_position.direction_to(target()).angle()
+	pass
+	#direction = global_position.direction_to(target()).angle()
 
-	lightOb.rotation = direction
+	#lightOb.rotation = direction
 
 func target():
 	for body in $ViewBox.get_overlapping_bodies():

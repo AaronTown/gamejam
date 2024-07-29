@@ -22,7 +22,6 @@ func _input(event):
 		return
 	if event.is_action("Click"):
 		Input.set_custom_mouse_cursor(cursor_texture)
-		print(get_global_mouse_position())
 		game.PlaceTower(tower_to_place, get_global_mouse_position())
 		tower_picked = false
 		$Button/Sprite2D.show()
@@ -53,13 +52,13 @@ func _on_button_2_pressed():
 	tower_to_place = "Reflector"
 
 
-func _on_red_pressed():
-	get_parent().ChangeType(Color.RED)
-
-
-func _on_blue_pressed():
-	get_parent().ChangeType(Color.BLUE)
-
-
-func _on_green_pressed():
-	get_parent().ChangeType(Color.GREEN)
+#func _on_red_pressed():
+	#get_parent().ChangeType(Color.RED)
+#
+#
+#func _on_blue_pressed():
+	#get_parent().ChangeType(Color.BLUE)
+#
+#
+#func _on_green_pressed():
+	#get_parent().ChangeType(Color.GREEN)

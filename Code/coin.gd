@@ -19,7 +19,7 @@ func collect():
 	TotalMoney.money += value
 	#print(TotalMoney.money)
 	#print("Coin collected!")  # Debug print
-	
+	$Sound.play()
 	emit_signal("coin_collected", value)
 	stop() 						# stops animation of sprite
 	area.input_pickable = false # can't be picked up multiple times as fade starts

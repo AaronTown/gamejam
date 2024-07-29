@@ -19,7 +19,7 @@ func _ready():
 	# and the navigation layout.
 	navigation_agent.path_desired_distance = 4.0
 	navigation_agent.target_desired_distance = 4.0
-	set_modulate(type.inverted())
+	#ChangeType(type)
 	# Make sure to not await during _ready.
 	call_deferred("actor_setup")
 	animated_sprite.queue("spawn")
@@ -103,15 +103,17 @@ func takeDamage(_damage, _type):
 		die()
 
 func die():
-	var coin = coin.instantiate()
-	coin.global_position = global_position
-	get_parent().add_child(coin)
+	for i in range(0,randi_range(0,3)):
+		var coin = coin.instantiate()
+		coin.global_position = global_position + Vector2(randf_range(-10,10), randf_range(-10,10))
+		get_parent().add_child(coin)
+	
 	# drop_coin()
 	queue_free()
 	died.emit(self)
 	# animated_sprite.play("death")
 	
-func drop_coin():
-	get_parent().AddMoney(10000000000000)
-	pass
 
+func ChangeType(_type : Color):
+	set_modulate(_type.inverted())
+	type = _type

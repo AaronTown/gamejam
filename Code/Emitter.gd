@@ -22,17 +22,22 @@ func _ready():
 
 
 func _unhandled_input(event):
-	if event.is_action("Shoot"):
-
-		$Light.show()
-		await get_tree().create_timer(0.4).timeout
-		$Light.hide()
+	if get_node("/root/Game").round_active or global_position.distance_to(get_global_mouse_position()) > 50:
+		$UpgradeMenu.hide()
+		return
+	if event.is_action("Click") and get_node("/root/Game").colors_active:
+		$UpgradeMenu.show()
+	#if event.is_action("Shoot"):
+#
+		#$Light.show()
+		#await get_tree().create_timer(0.4).timeout
+		#$Light.hide()
 	
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_WHEEL_UP:
-			lightOb.range += 1
-		if event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
-			lightOb.range -= 1
+	#if event is InputEventMouseButton:
+		#if event.button_index == MOUSE_BUTTON_WHEEL_UP:
+			#lightOb.range += 1
+		#if event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
+			#lightOb.range -= 1
 	  
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

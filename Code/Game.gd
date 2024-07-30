@@ -15,6 +15,7 @@ var enemies : int
 var thematic_darkness = .1
 var round_active = false
 var colors_active = false
+var spawn_timer = 0
 #signal round_start(round)
 
 # Called when the node enters the scene tree for the first time.
@@ -34,7 +35,9 @@ func _process(delta):
 	# money += 1
 	$HealthIndicator.energy = thematic_darkness + max_energy * (emitter.max_health - emitter.health) / emitter.max_health
 	$GUI/Money.text = ": " + str(TotalMoney.money)
-	if enemies_to_spawn > 0:
+	spawn_timer += 1
+	if enemies_to_spawn > 0 and spawn_timer > 100:
+		spawn_timer = 0
 		var spawn = Spawners.get_children()[randi_range(0,3)].global_position
 		var new_enemy = Enemy.instantiate()
 		Enemies.add_child(new_enemy)
@@ -110,7 +113,7 @@ func PlaceTower(tower_to_place, tower_position):
 		
 	elif tower_to_place == "Reflector":
 		var new_tower = Reflector.instantiate()
-		$Level1/Reflectors.add_child(new_tower)
+		$Level1/Reflectors.add_child(new_tower, true)
 		new_tower.global_position = tower_position
 		
 		

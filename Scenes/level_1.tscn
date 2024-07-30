@@ -1,25 +1,18 @@
 [gd_scene load_steps=110 format=3 uid="uid://cpperhtev6wpe"]
 
 [ext_resource type="Texture2D" uid="uid://dub2jjk4ng8ie" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/1 Tiles/Map_tiles.png" id="1_d50qo"]
-[ext_resource type="Texture2D" uid="uid://cee8247egblhg" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Trees/9.png" id="2_sln6u"]
-[ext_resource type="Texture2D" uid="uid://bsav21f5ucqh2" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Trees/1.png" id="3_cmvs3"]
+[ext_resource type="Texture2D" uid="uid://cee8247egblhg" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Trees/Tree9.png" id="2_syu1t"]
 [ext_resource type="Texture2D" uid="uid://cp6go6e65s2et" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/5 Shadows/s1.png" id="3_py7p3"]
 [ext_resource type="PackedScene" uid="uid://cwsmlam5oq3gc" path="res://Scenes/Emitter.tscn" id="3_v2c3n"]
 [ext_resource type="Texture2D" uid="uid://ux5xrscowyi2" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/5 Shadows/s2.png" id="4_dcj51"]
-[ext_resource type="Texture2D" uid="uid://brsymlkws43tp" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Trees/2.png" id="4_n7ao7"]
 [ext_resource type="Texture2D" uid="uid://c8kyor0rqr7sf" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/5 Shadows/s3.png" id="5_64whl"]
-[ext_resource type="Texture2D" uid="uid://7gqt6so2tha1" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Trees/4.png" id="5_cv713"]
 [ext_resource type="Texture2D" uid="uid://bdi2im81wjehm" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/5 Shadows/s4.png" id="6_04r87"]
-[ext_resource type="Texture2D" uid="uid://bfiapamvwwtyw" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Trees/5.png" id="6_08yik"]
 [ext_resource type="Texture2D" uid="uid://d05pmaxnyiinl" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/5 Shadows/s5.png" id="7_e6qt0"]
-[ext_resource type="Texture2D" uid="uid://btlbgfjxyeuhq" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Trees/3.png" id="7_kvitu"]
-[ext_resource type="Texture2D" uid="uid://dfguroovvwfap" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Trees/6.png" id="8_2uwtl"]
 [ext_resource type="Texture2D" uid="uid://cbmuw1f6vuxee" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/5 Shadows/s6.png" id="8_5cahq"]
 [ext_resource type="Texture2D" uid="uid://rx471h6gtx1o" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/5 Shadows/s7.png" id="9_sxxhu"]
-[ext_resource type="Texture2D" uid="uid://bmqhdoeqpdjjx" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Trees/7.png" id="9_ydee7"]
 [ext_resource type="Texture2D" uid="uid://cnhejmnmqi0s3" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/5 Shadows/s8.png" id="10_2obem"]
-[ext_resource type="Texture2D" uid="uid://q6wjimxc3b18" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Trees/8.png" id="10_j01aw"]
 [ext_resource type="Texture2D" uid="uid://mkp1mddxi6vu" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/5 Shadows/r1.png" id="11_xwf34"]
+[ext_resource type="Texture2D" uid="uid://bsav21f5ucqh2" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Trees/Tree1.png" id="12_ssbcp"]
 [ext_resource type="Texture2D" uid="uid://d3d5rn60wxq2y" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/5 Shadows/r2.png" id="13_df164"]
 [ext_resource type="Texture2D" uid="uid://cl435s4bo0tib" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/5 Shadows/r3.png" id="14_8ep1s"]
 [ext_resource type="Texture2D" uid="uid://cg8tjmlrh8dxj" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/5 Shadows/r4.png" id="15_sw1ls"]
@@ -30,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://e65kiesug3rc" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/5 Shadows/e1.png" id="20_c7q2o"]
 [ext_resource type="Texture2D" uid="uid://dvw2sc1p63trp" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/5 Shadows/e2.png" id="21_yolwy"]
 [ext_resource type="Texture2D" uid="uid://benj7eqgu3jvs" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/5 Shadows/e3.png" id="22_n4nao"]
+[ext_resource type="Texture2D" uid="uid://brsymlkws43tp" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Trees/Tree2.png" id="23_meqm6"]
 [ext_resource type="Texture2D" uid="uid://ca8mvjc2oiak2" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/5 Shadows/e4.png" id="24_4sa4m"]
 [ext_resource type="Texture2D" uid="uid://dlxr1m1e7v1st" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/5 Shadows/e5.png" id="25_wq8lc"]
 [ext_resource type="Texture2D" uid="uid://btwyj3i331k6a" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/5 Shadows/e6.png" id="26_yehy1"]
@@ -40,6 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://5myo47wemvqd" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Crystals/3.png" id="31_f7ok4"]
 [ext_resource type="Texture2D" uid="uid://bjomjg3r72yhq" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Crystals/4.png" id="32_86f8g"]
 [ext_resource type="Texture2D" uid="uid://b5qk8aeyl7mnv" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Crystals/5.png" id="33_hx5of"]
+[ext_resource type="Texture2D" uid="uid://7gqt6so2tha1" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Trees/Tree4.png" id="34_8b2uj"]
 [ext_resource type="Texture2D" uid="uid://hfe1dlne3jcu" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Crystals/6.png" id="35_35y5h"]
 [ext_resource type="Texture2D" uid="uid://dy0krnmb70km4" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Grass/1.png" id="36_jrnha"]
 [ext_resource type="Texture2D" uid="uid://dmkml8ecgem8r" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Grass/2.png" id="37_xkkh4"]
@@ -50,10 +45,15 @@
 [ext_resource type="Texture2D" uid="uid://crb72pax3elrf" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Grass/7.png" id="42_f3tpt"]
 [ext_resource type="Texture2D" uid="uid://cq1v7plxjo86l" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Grass/8.png" id="43_qtowl"]
 [ext_resource type="Texture2D" uid="uid://d25usm8yeajqq" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Grass/9.png" id="44_8481b"]
+[ext_resource type="Texture2D" uid="uid://bfiapamvwwtyw" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Trees/Tree5.png" id="45_h4bsh"]
 [ext_resource type="Texture2D" uid="uid://cg2foms6ui7dy" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Grass/10.png" id="46_8momc"]
 [ext_resource type="Texture2D" uid="uid://b1houkee6ievk" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Houses/5.png" id="47_uyvnn"]
 [ext_resource type="Texture2D" uid="uid://bmbkftsj6ay7r" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Houses/6.png" id="48_ykniw"]
 [ext_resource type="Texture2D" uid="uid://cfif3h8ql5exe" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Houses/4.png" id="49_wosyf"]
+[ext_resource type="Texture2D" uid="uid://btlbgfjxyeuhq" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Trees/Tree3.png" id="50_uqba4"]
+[ext_resource type="Texture2D" uid="uid://dfguroovvwfap" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Trees/Tree6.png" id="51_xxlp2"]
+[ext_resource type="Texture2D" uid="uid://bmqhdoeqpdjjx" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Trees/Tree7.png" id="52_1mw87"]
+[ext_resource type="Texture2D" uid="uid://q6wjimxc3b18" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/2 Objects/Trees/Tree8.png" id="53_u67hr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j8umw"]
 texture = ExtResource("1_d50qo")
@@ -611,7 +611,7 @@ texture = ExtResource("1_d50qo")
 20:23/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jh6hh"]
-texture = ExtResource("2_sln6u")
+texture = ExtResource("2_syu1t")
 texture_region_size = Vector2i(10, 43)
 0:0/0 = 0
 
@@ -660,7 +660,7 @@ texture_region_size = Vector2i(6, 6)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yunn0"]
-texture = ExtResource("3_cmvs3")
+texture = ExtResource("12_ssbcp")
 texture_region_size = Vector2i(27, 44)
 0:1/0 = 0
 0:0/0 = 0
@@ -715,7 +715,7 @@ texture_region_size = Vector2i(10, 7)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_re61k"]
-texture = ExtResource("4_n7ao7")
+texture = ExtResource("23_meqm6")
 texture_region_size = Vector2i(23, 38)
 0:0/0 = 0
 
@@ -770,7 +770,7 @@ texture_region_size = Vector2i(22, 31)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qk34s"]
-texture = ExtResource("5_cv713")
+texture = ExtResource("34_8b2uj")
 texture_region_size = Vector2i(27, 39)
 0:0/0 = 0
 
@@ -825,7 +825,7 @@ texture_region_size = Vector2i(10, 7)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5ylki"]
-texture = ExtResource("6_08yik")
+texture = ExtResource("45_h4bsh")
 texture_region_size = Vector2i(26, 38)
 0:0/0 = 0
 
@@ -850,22 +850,22 @@ texture_region_size = Vector2i(35, 63)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qplwp"]
-texture = ExtResource("7_kvitu")
+texture = ExtResource("50_uqba4")
 texture_region_size = Vector2i(28, 32)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wa16h"]
-texture = ExtResource("8_2uwtl")
+texture = ExtResource("51_xxlp2")
 texture_region_size = Vector2i(15, 22)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mx1uw"]
-texture = ExtResource("9_ydee7")
+texture = ExtResource("52_1mw87")
 texture_region_size = Vector2i(10, 28)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_31ihj"]
-texture = ExtResource("10_j01aw")
+texture = ExtResource("53_u67hr")
 texture_region_size = Vector2i(11, 37)
 0:0/0 = 0
 

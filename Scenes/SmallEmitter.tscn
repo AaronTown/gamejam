@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://cticiptg3al5b"]
+[gd_scene load_steps=13 format=3 uid="uid://cticiptg3al5b"]
 
 [ext_resource type="Script" path="res://Code/SmallEmitter.gd" id="1_vjr8h"]
 [ext_resource type="Texture2D" uid="uid://ltqinjlblmiv" path="res://assets/EmitterSmall.png" id="2_0wvvp"]
+[ext_resource type="PackedScene" uid="uid://s61m6oskqc5n" path="res://Scenes/UpgradeMenu.tscn" id="3_sa3ec"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8xxgd"]
 radius = 216.005
@@ -82,5 +83,12 @@ autoplay = "default"
 scale = Vector2(2, 2)
 texture = SubResource("GradientTexture2D_48w4g")
 texture_scale = 4.33
+
+[node name="UpgradeMenu" parent="." instance=ExtResource("3_sa3ec")]
+visible = false
+offset_left = -162.0
+offset_top = -234.0
+offset_right = -162.0
+offset_bottom = -234.0
 
 [connection signal="body_entered" from="ViewBox" to="." method="_on_hitbox_body_entered"]

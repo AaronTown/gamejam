@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://cwsmlam5oq3gc"]
+[gd_scene load_steps=12 format=3 uid="uid://cwsmlam5oq3gc"]
 
 [ext_resource type="Script" path="res://Code/Emitter.gd" id="1_smvlj"]
 [ext_resource type="Texture2D" uid="uid://cc1sr3v2go0b5" path="res://assets/emitter.png" id="2_giou8"]
+[ext_resource type="PackedScene" uid="uid://s61m6oskqc5n" path="res://Scenes/UpgradeMenu.tscn" id="3_30c1p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jccg1"]
 atlas = ExtResource("2_giou8")
@@ -75,5 +76,8 @@ scale = Vector2(4, 4)
 energy = 0.5
 texture = SubResource("GradientTexture2D_88bxn")
 texture_scale = 4.33
+
+[node name="UpgradeMenu" parent="." instance=ExtResource("3_30c1p")]
+visible = false
 
 [connection signal="body_entered" from="HitBox" to="." method="_on_hitbox_body_entered"]

@@ -85,11 +85,13 @@ func updateLight():
 	for light in received_lights:
 		#if isFacingAway(light, self):
 		#	continue
+		print(light.type)
 		angle += light.angle
 		range += light.range
 		new_type += light.type / num_lights
 
 	#light_object = light_scene.instantiate()
+	light_object.get_node("PointLight2D").energy = 0.5
 	light_object.angle = angle / num_lights / 2
 	light_object.range = range / num_lights * 2/3
 	if new_type.a > 1:

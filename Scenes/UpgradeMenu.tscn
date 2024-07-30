@@ -1,15 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://s61m6oskqc5n"]
+[gd_scene load_steps=6 format=3 uid="uid://s61m6oskqc5n"]
 
-[ext_resource type="Script" path="res://Code/TowerMenu.gd" id="1_hcw4k"]
+[ext_resource type="Script" path="res://Code/UpgradeMenu.gd" id="1_5wr0p"]
 [ext_resource type="Texture2D" uid="uid://cm5521bbg0sen" path="res://assets/menuicon.png" id="2_rnfbc"]
 [ext_resource type="Texture2D" uid="uid://ltqinjlblmiv" path="res://assets/EmitterSmall.png" id="3_vv4sc"]
 [ext_resource type="Texture2D" uid="uid://bsf0t1wymy5jx" path="res://assets/Reflector.png" id="4_mwmp7"]
+[ext_resource type="Texture2D" uid="uid://127af1tx4oew" path="res://assets/rgbwheel.png" id="5_8kfxd"]
 
-[node name="TowerMenu" type="Control"]
+[node name="UpgradeMenu" type="Control"]
 light_mask = 0
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_hcw4k")
+offset_left = -164.0
+offset_top = -231.0
+offset_right = -164.0
+offset_bottom = -231.0
+scale = Vector2(3, 3)
+script = ExtResource("1_5wr0p")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 2
@@ -38,14 +44,33 @@ scale = Vector2(0.15, 0.1375)
 texture = ExtResource("4_mwmp7")
 hframes = 4
 
-[node name="Button3" type="Button" parent="."]
-visible = false
-layout_mode = 2
-offset_left = 68.0
-offset_right = 108.0
-offset_bottom = 40.0
-icon = ExtResource("2_rnfbc")
+[node name="ColorPicker" type="Sprite2D" parent="."]
+position = Vector2(49, 80)
+texture = ExtResource("5_8kfxd")
+
+[node name="Red" type="Button" parent="ColorPicker"]
+offset_left = -22.0
+offset_top = -38.0
+offset_right = 32.0
+offset_bottom = -8.0
+flat = true
+
+[node name="Blue" type="Button" parent="ColorPicker"]
+offset_left = 6.0
+offset_top = -8.0
+offset_right = 41.0
+offset_bottom = 32.0
+flat = true
+
+[node name="Green" type="Button" parent="ColorPicker"]
+offset_left = -29.0
+offset_top = -8.0
+offset_right = 6.0
+offset_bottom = 32.0
 flat = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="ColorPicker/Red" to="." method="_on_red_pressed"]
+[connection signal="pressed" from="ColorPicker/Blue" to="." method="_on_blue_pressed"]
+[connection signal="pressed" from="ColorPicker/Green" to="." method="_on_green_pressed"]

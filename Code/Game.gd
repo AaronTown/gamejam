@@ -14,6 +14,7 @@ var enemies_to_spawn : int = 0
 var enemies : int 
 var thematic_darkness = .1
 var round_active = false
+var colors_active = false
 #signal round_start(round)
 
 # Called when the node enters the scene tree for the first time.
@@ -21,8 +22,9 @@ func _ready():
 	var cursor_texture = load("res://assets/cursor.png")
 	Input.set_custom_mouse_cursor(cursor_texture)
 	randomize()
-	round = 1
-	StartRound(round)
+	round = 0
+	$Tutorial.TutorialStep(round+1)
+	#StartRound(round)
 	# Connect to coins
 	get_tree().connect("node_added", Callable(self, "_on_node_added"))
 
@@ -35,9 +37,22 @@ func _process(delta):
 	if enemies_to_spawn > 0:
 		var spawn = Spawners.get_children()[randi_range(0,3)].global_position
 		var new_enemy = Enemy.instantiate()
-		new_enemy.position = spawn + Vector2(randf_range(-10,10), randf_range(-10,10))
-		new_enemy.died.connect(EnemyDied)
 		Enemies.add_child(new_enemy)
+		new_enemy.global_position = spawn + Vector2(randf_range(-10,10), randf_range(-10,10))
+		var new_type = Color.WHITE
+		if round == 4 :
+			new_type = Color.RED
+		elif round > 4:
+			var enemy_type = randi_range(1,10)
+			if enemy_type == 1:
+				new_type = Color.RED
+			elif enemy_type == 2:
+				new_type = Color.BLUE
+			elif enemy_type == 3:
+				new_type = Color.GREEN
+		new_enemy.ChangeType(new_type)
+		new_enemy.died.connect(EnemyDied)
+		
 		enemies_to_spawn -= 1
 	
 	# Play Game Over screen
@@ -48,7 +63,8 @@ func AddMoney(amount):
 	TotalMoney.money += amount
 
 func StartRound(round : int):
-	$Tutorial.TutorialStep(round)
+	round_active = true
+	$GUI/Play.hide()
 	$GUI/Wave.text = "Wave: " + str(round)
 	$GUI/Wave.show()
 	await get_tree().create_timer(3).timeout
@@ -66,11 +82,17 @@ func EnemyDied(enemy):
 	enemy.died.disconnect(EnemyDied)
 	enemies -= 1
 	if enemies == 0:
-		round_active = false
+		EndRound(round)
 		#round += 1
 		#StartRound(round)
 
-
+func EndRound(round):
+	if round == 3:
+		colors_active = true
+	if round < 4:
+		$Tutorial.TutorialStep(round+1)
+	round_active = false
+	$GUI/Play.show()
 # This function will play out the steps for when a GameOver occurs.
 # The factors to call this function will be called in _process(delta)
 func Game_Over():
@@ -80,10 +102,9 @@ func Game_Over():
 	
 
 func PlaceTower(tower_to_place, tower_position):
-	print(tower_position)
 	if tower_to_place == "SmallEmitter":
 		var new_tower = SmallEmitter.instantiate()
-		$Level1/Emitters.add_child(new_tower)
+		$Level1/Emitters.add_child(new_tower, true)
 		new_tower.global_position = tower_position
 		print(new_tower.position)
 		
@@ -93,3 +114,8 @@ func PlaceTower(tower_to_place, tower_position):
 		new_tower.global_position = tower_position
 		
 		
+
+
+func _on_play_pressed():
+	round+=1
+	StartRound(round)

@@ -75,7 +75,6 @@ texture = SubResource("GradientTexture2D_yylfd")
 texture_scale = 4.33
 
 [node name="Light" parent="." instance=ExtResource("3_3x5da")]
-visible = false
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

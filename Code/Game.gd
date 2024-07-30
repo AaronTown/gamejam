@@ -113,7 +113,7 @@ func PlaceTower(tower_to_place, tower_position):
 		
 	elif tower_to_place == "Reflector":
 		var new_tower = Reflector.instantiate()
-		$Level1/Reflectors.add_child(new_tower)
+		$Level1/Reflectors.add_child(new_tower, true)
 		new_tower.global_position = tower_position
 		
 		

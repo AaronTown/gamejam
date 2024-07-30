@@ -2308,18 +2308,6 @@ sources/226 = SubResource("TileSetAtlasSource_luogd")
 
 [node name="MenuBackground" type="Node2D"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(576, 297)
-
-[node name="Camera2D2" type="Camera2D" parent="."]
-position = Vector2(1728, 297)
-
-[node name="Camera2D3" type="Camera2D" parent="."]
-position = Vector2(2880, 297)
-
-[node name="Camera2D4" type="Camera2D" parent="."]
-position = Vector2(4032, 297)
-
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_15rig")
 format = 2

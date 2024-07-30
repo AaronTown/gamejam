@@ -24,7 +24,8 @@ func _ready():
 	Input.set_custom_mouse_cursor(cursor_texture)
 	randomize()
 	round = 0
-	$Tutorial.TutorialStep(round+1)
+	if TotalMoney.tutorial:
+		$Tutorial.TutorialStep(round+1)
 	#StartRound(round)
 	# Connect to coins
 	get_tree().connect("node_added", Callable(self, "_on_node_added"))
@@ -36,7 +37,7 @@ func _process(delta):
 	$HealthIndicator.energy = thematic_darkness + max_energy * (emitter.max_health - emitter.health) / emitter.max_health
 	$GUI/Money.text = ": " + str(TotalMoney.money)
 	spawn_timer += 1
-	if enemies_to_spawn > 0 and spawn_timer > 100:
+	if enemies_to_spawn > 0 and spawn_timer > 0:
 		spawn_timer = 0
 		var spawn = Spawners.get_children()[randi_range(0,3)].global_position
 		var new_enemy = Enemy.instantiate()
@@ -66,7 +67,7 @@ func AddMoney(amount):
 	TotalMoney.money += amount
 
 func StartRound(round : int):
-	round_active = true
+	#round_active = true
 	$GUI/Play.hide()
 	$GUI/Wave.text = "Wave: " + str(round)
 	$GUI/Wave.show()
@@ -93,7 +94,8 @@ func EndRound(round):
 	if round == 3:
 		colors_active = true
 	if round < 4:
-		$Tutorial.TutorialStep(round+1)
+		if TotalMoney.tutorial:
+			$Tutorial.TutorialStep(round+1)
 	round_active = false
 	$GUI/Play.show()
 # This function will play out the steps for when a GameOver occurs.

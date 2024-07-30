@@ -38,7 +38,8 @@ func TutorialStep(round):
 			RunDialogue([dialogue[10]])
 		4:
 			RunDialogue(dialogue.slice(11,13))
-	
+			TotalMoney.tutorial = false
+		
 		
 
 func RunDialogue(text):

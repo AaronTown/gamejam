@@ -7,32 +7,39 @@
 
 [node name="TowerMenu" type="Control"]
 light_mask = 0
+z_index = 5
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_emqoi")
 
 [node name="Button" type="Button" parent="."]
+light_mask = 0
 layout_mode = 2
 offset_right = 40.0
 offset_bottom = 40.0
+tooltip_text = "10"
 icon = ExtResource("1_i4wtn")
 flat = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Button"]
+light_mask = 0
 position = Vector2(21, 18)
 scale = Vector2(0.190625, 0.1625)
 texture = ExtResource("2_jy2yb")
 hframes = 4
 
 [node name="Button2" type="Button" parent="."]
+light_mask = 0
 layout_mode = 2
 offset_left = 34.0
 offset_right = 74.0
 offset_bottom = 40.0
+tooltip_text = "5"
 icon = ExtResource("1_i4wtn")
 flat = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Button2"]
+light_mask = 0
 position = Vector2(20, 20)
 scale = Vector2(0.15, 0.1375)
 texture = ExtResource("3_gsk43")

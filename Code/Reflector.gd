@@ -81,8 +81,9 @@ func updateLight():
 		#light_object.queue_free()
 	if received_lights.is_empty():
 		light_object.hide()
+		light_object.get_node("CollisionPolygon2D").set_disabled(true)
 		return
-
+	light_object.get_node("CollisionPolygon2D").set_disabled(false)
 	#var strength = 0
 	var angle = 0
 	var range = 0

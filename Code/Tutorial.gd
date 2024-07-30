@@ -32,6 +32,8 @@ func TutorialStep(round):
 			RunDialogue(dialogue.slice(0,3))
 		2: 
 			RunDialogue(dialogue.slice(4,9))
+			if TotalMoney.money < 15:
+				TotalMoney.money = 15
 		3:
 			RunDialogue([dialogue[10]])
 		4:

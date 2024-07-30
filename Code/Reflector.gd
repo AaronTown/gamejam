@@ -38,7 +38,13 @@ func _process(delta):
 
 		move_and_slide()
 
+func _input(event):
+	if get_node("/root/Game").round_active:
+		return
+
 func _on_input_event(viewport, event, shape_idx):
+	if get_node("/root/Game").round_active:
+		return
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
 			picked_up = !picked_up
@@ -85,7 +91,7 @@ func updateLight():
 	for light in received_lights:
 		#if isFacingAway(light, self):
 		#	continue
-		print(light.type)
+		#print(light.type)
 		angle += light.angle
 		range += light.range
 		new_type += light.type / num_lights

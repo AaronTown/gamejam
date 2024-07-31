@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d3j7xi0cxv6qu"]
+[gd_scene load_steps=12 format=3 uid="uid://d3j7xi0cxv6qu"]
 
 [ext_resource type="Texture2D" uid="uid://cao75r160q4cv" path="res://assets/coin.png" id="1_le0x5"]
 [ext_resource type="Script" path="res://Code/coin.gd" id="2_65flc"]
@@ -43,6 +43,14 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_w083d"]
 radius = 237.961
 
+[sub_resource type="Gradient" id="Gradient_0nk7e"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_44bgj"]
+gradient = SubResource("Gradient_0nk7e")
+fill = 1
+fill_from = Vector2(0.495413, 0.495413)
+
 [node name="Coin" type="AnimatedSprite2D"]
 position = Vector2(1, 3)
 scale = Vector2(0.113542, 0.113542)
@@ -51,11 +59,19 @@ autoplay = "default"
 script = ExtResource("2_65flc")
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-8.80731, -26.4219)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-17.6147, -26.422)
+position = Vector2(1.90735e-06, 0)
 shape = SubResource("CircleShape2D_w083d")
 
 [node name="Sound" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-8.80731, -26.4219)
 stream = ExtResource("3_eanfs")
 volume_db = -15.0
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-17.6146, -26.4219)
+energy = 0.6
+texture = SubResource("GradientTexture2D_44bgj")
+texture_scale = 1.95

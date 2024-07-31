@@ -46,8 +46,8 @@ func _on_input_event(viewport, event, shape_idx):
 	if get_node("/root/Game").round_active:
 		return
 	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
-			picked_up = !picked_up
+		#if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
+			#picked_up = !picked_up
 		if event.button_index == MOUSE_BUTTON_RIGHT and event.is_pressed():
 			showTowerMenu()
 		if event.button_index == MOUSE_BUTTON_WHEEL_DOWN:

@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Code/TowerMenu.gd" id="1_emqoi"]
 [ext_resource type="Texture2D" uid="uid://cm5521bbg0sen" path="res://assets/menuicon.png" id="1_i4wtn"]
-[ext_resource type="Texture2D" uid="uid://bsf0t1wymy5jx" path="res://assets/Reflector.png" id="3_gsk43"]
 [ext_resource type="Texture2D" uid="uid://bpsnym7wkju7t" path="res://assets/smallstatic.png" id="3_stnwx"]
+[ext_resource type="Texture2D" uid="uid://carjtpdmtcjx6" path="res://assets/reflectorstatic.png" id="4_xi15y"]
 
 [node name="TowerMenu" type="Control"]
 light_mask = 0
@@ -24,9 +24,8 @@ flat = true
 [node name="Sprite2D" type="Sprite2D" parent="Button"]
 light_mask = 0
 position = Vector2(21, 18)
-scale = Vector2(0.190625, 0.1625)
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("3_stnwx")
-hframes = 4
 
 [node name="Button2" type="Button" parent="."]
 light_mask = 0
@@ -41,9 +40,8 @@ flat = true
 [node name="Sprite2D" type="Sprite2D" parent="Button2"]
 light_mask = 0
 position = Vector2(20, 20)
-scale = Vector2(0.15, 0.1375)
-texture = ExtResource("3_gsk43")
-hframes = 4
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_xi15y")
 
 [node name="Button3" type="Button" parent="."]
 visible = false

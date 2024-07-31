@@ -16,13 +16,13 @@ signal next
 			#"Oh, what's this? We've never seen anything like this before! A shadow...with colour?? And they seem to be totally unaffected by the light!? ",
 			#"The only thing I can think of is that maybe if we hit em with the opposite colour then maybe that'll do it!",
 			#"Here! Take these lenses we found! Put them in any Emitter or Reflector to change the light coming from it!"]
-var dialogue = ["Welcome to Prismatic, a tower defense game about utilizing the qualities of light to defeat the oncoming waves of darkness!",
-			"Here come the Shadow Moths! Quick, defeat them with your light!",
-			"Well done, those things are deadly!",
-			"Looks like the Shadow Moths dropped some gems, use those to build another Emitter and a Reflector",
+var dialogue = ["Welcome to Prismatic a tower defense game about utilizing the qualities of light to defeat the oncoming waves of darkness!",
+			"Here come the Shadow Moths! Quick defeat them with your light! (Click Play to start the wave)",
+			"Well done those things are deadly!",
+			"Looks like the Shadow Moths dropped some gems use those to build another Emitter and a Reflector",
 			"Click on the tower icons in the bottom right to select a tower and click on the map to place it. Use the Mouse Wheel to rotate the tower",
 			"Well with a display like that I think you're more than ready to handle this yourself! Good luck out there!",
-			"Oh what's this? It looks like there are more Shadow Moths incoming, but this time... they have color?",
+			"Oh what's this? It looks like there are more Shadow Moths incoming but this time... they have color?",
 			"The white light isn't gonna affect these guys, use these lens to change your light to red and cancel out the enemy color!",
 			"Click on the tower to open the color menu and click a color to change the tower type",
 			"Great Job! You got the idea now. Keep an eye out for other colored enemies. Use the Color Wheel in the top left to decide your attack!"]
@@ -39,13 +39,13 @@ func TutorialStep(round):
 	match round:
 		1:
 			#print(round)
-			RunDialogue(dialogue.slice(0,1))
+			RunDialogue(dialogue.slice(0,2))
 		2: 
-			RunDialogue(dialogue.slice(2,4))
+			RunDialogue(dialogue.slice(2,5))
 			if TotalMoney.money < 15:
 				TotalMoney.money = 15
 		3:
-			RunDialogue([dialogue[5]])
+			RunDialogue(dialogue.slice(5,6))
 		4:
 			RunDialogue(dialogue.slice(6,8))
 			TotalMoney.tutorial = false

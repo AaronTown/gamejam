@@ -38,6 +38,8 @@ func _process(delta):
 	$GUI/Money.text = ": " + str(TotalMoney.money)
 	spawn_timer += 1
 	if enemies_to_spawn > 0 and spawn_timer > max_spawn_timer:
+		if emitter.health < emitter.max_health:
+			emitter.health+=1
 		spawn_timer = 0
 		var spawn = Spawners.get_children()[randi_range(0,3)].global_position
 		var new_enemy = Enemy.instantiate()
@@ -111,7 +113,6 @@ func PlaceTower(tower_to_place, tower_position):
 		var new_tower = SmallEmitter.instantiate()
 		$Level1/Emitters.add_child(new_tower, true)
 		new_tower.global_position = tower_position
-		print(new_tower.position)
 		
 	elif tower_to_place == "Reflector":
 		var new_tower = Reflector.instantiate()

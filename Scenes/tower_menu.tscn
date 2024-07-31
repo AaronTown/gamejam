@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Code/TowerMenu.gd" id="1_emqoi"]
 [ext_resource type="Texture2D" uid="uid://cm5521bbg0sen" path="res://assets/menuicon.png" id="1_i4wtn"]
-[ext_resource type="Texture2D" uid="uid://ltqinjlblmiv" path="res://assets/EmitterSmall.png" id="2_jy2yb"]
 [ext_resource type="Texture2D" uid="uid://bsf0t1wymy5jx" path="res://assets/Reflector.png" id="3_gsk43"]
+[ext_resource type="Texture2D" uid="uid://bpsnym7wkju7t" path="res://assets/smallstatic.png" id="3_stnwx"]
 
 [node name="TowerMenu" type="Control"]
 light_mask = 0
@@ -25,7 +25,7 @@ flat = true
 light_mask = 0
 position = Vector2(21, 18)
 scale = Vector2(0.190625, 0.1625)
-texture = ExtResource("2_jy2yb")
+texture = ExtResource("3_stnwx")
 hframes = 4
 
 [node name="Button2" type="Button" parent="."]

@@ -7,7 +7,7 @@ extends Node2D
 @onready var SmallEmitter = preload("res://Scenes/SmallEmitter.tscn")
 @onready var Reflector = preload("res://Scenes/Reflector.tscn")
 
-
+@export var max_spawn_timer : int = 75
 const max_energy : float = 2.0
 var round : int 
 var enemies_to_spawn : int = 0
@@ -37,7 +37,7 @@ func _process(delta):
 	$HealthIndicator.energy = thematic_darkness + max_energy * (emitter.max_health - emitter.health) / emitter.max_health
 	$GUI/Money.text = ": " + str(TotalMoney.money)
 	spawn_timer += 1
-	if enemies_to_spawn > 0 and spawn_timer > 0:
+	if enemies_to_spawn > 0 and spawn_timer > max_spawn_timer:
 		spawn_timer = 0
 		var spawn = Spawners.get_children()[randi_range(0,3)].global_position
 		var new_enemy = Enemy.instantiate()
@@ -93,7 +93,7 @@ func EnemyDied(enemy):
 func EndRound(round):
 	if round == 3:
 		colors_active = true
-	if round < 4:
+	if round < 5:
 		if TotalMoney.tutorial:
 			$Tutorial.TutorialStep(round+1)
 	round_active = false
@@ -122,5 +122,8 @@ func PlaceTower(tower_to_place, tower_position):
 
 
 func _on_play_pressed():
+	max_spawn_timer -= 1
+	if max_spawn_timer < 0:
+		max_spawn_timer = 0
 	round+=1
 	StartRound(round)

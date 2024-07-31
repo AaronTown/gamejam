@@ -22,8 +22,11 @@ TotalMoney="*res://Code/TotalMoney.gd"
 [display]
 
 window/size/viewport_height=595
-window/size/mode=2
+window/size/mode=4
+window/size/initial_position=Vector2i(-75, -205)
 window/size/resizable=false
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [editor_plugins]
 

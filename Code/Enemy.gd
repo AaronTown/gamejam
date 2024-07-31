@@ -102,16 +102,16 @@ func takeDamage(_damage, _type):
 	if health <= 0:
 		die()
 
-func die():
-	for i in range(0,randi_range(0,3)):
+func killed():
+	for i in range(0,randi_range(0,1)):
 		var coin = coin.instantiate()
 		coin.global_position = global_position + Vector2(randf_range(-10,10), randf_range(-10,10))
 		get_parent().add_child(coin)
-	
-	# drop_coin()
+	die()
+
+func die():
 	queue_free()
 	died.emit(self)
-	# animated_sprite.play("death")
 	
 
 func ChangeType(_type : Color):

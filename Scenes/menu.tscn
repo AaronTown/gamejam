@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Menu.gd" id="1_56bwg"]
 [ext_resource type="Texture2D" uid="uid://bj3gw4sp8j6eb" path="res://assets/title.png" id="2_3gpol"]
 [ext_resource type="Texture2D" uid="uid://doeikqf8b1007" path="res://assets/start button.png" id="2_vrl5o"]
-[ext_resource type="Texture2D" uid="uid://h5ol7sbs4qh0" path="res://assets/start text.png" id="3_ppqam"]
 [ext_resource type="Texture2D" uid="uid://c44bvlf2jbew8" path="res://assets/CreatedBy.png" id="4_kr1vu"]
+[ext_resource type="Texture2D" uid="uid://e4lhjouhnrlt" path="res://assets/start.png" id="4_yu821"]
 [ext_resource type="Texture2D" uid="uid://d2kh8j7xvg2hx" path="res://assets/AaronPixel.png" id="5_fuq08"]
 [ext_resource type="Texture2D" uid="uid://dk3wvkslvrfr7" path="res://assets/NickPixel.png" id="6_djt77"]
 [ext_resource type="Texture2D" uid="uid://bc08eioxj4xjp" path="res://assets/AnonPixel.png" id="7_oy5s7"]
@@ -53,9 +53,9 @@ scale = Vector2(11.7812, 11.7812)
 texture = ExtResource("2_vrl5o")
 
 [node name="StartText" type="Sprite2D" parent="Play"]
-position = Vector2(201, 64.5)
-scale = Vector2(8.875, 8.875)
-texture = ExtResource("3_ppqam")
+position = Vector2(310, 165.5)
+scale = Vector2(5.03875, 4.1775)
+texture = ExtResource("4_yu821")
 
 [node name="CreatedBy" type="Sprite2D" parent="."]
 position = Vector2(80, 32)

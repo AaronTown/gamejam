@@ -925,9 +925,9 @@ sources/52 = SubResource("TileSetAtlasSource_b7sic")
 sources/53 = SubResource("TileSetAtlasSource_5ev8y")
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ue4ca"]
-vertices = PackedVector2Array(-1016, -740, -161, -740, -255, 96, -1008, 225, 890, 226, 3, 91, 889, -741, 134, -741)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 3, 2, 5), PackedInt32Array(6, 4, 5, 7)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-1018, 235, 901, 237, 899, -752, 125.76, -751.197, -6, 81, -244, 86, -150.445, -750.91, -1027, -750)])
+vertices = PackedVector2Array(890, 226, -1008, 225, -1016, -740, 889, -741)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-1018, 235, 901, 237, 899, -752, -1027, -750)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 
 [node name="Level1" type="Node2D"]
@@ -959,16 +959,52 @@ position = Vector2(-70, 170)
 [node name="Spawners" type="Node2D" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="Spawners"]
-position = Vector2(-295, -742)
+position = Vector2(-301, -798)
 
 [node name="Marker2D2" type="Marker2D" parent="Spawners"]
-position = Vector2(700, -742)
+position = Vector2(708, -814)
 
 [node name="Marker2D3" type="Marker2D" parent="Spawners"]
-position = Vector2(884, -499)
+position = Vector2(936, -495)
 
 [node name="Marker2D4" type="Marker2D" parent="Spawners"]
-position = Vector2(-998, 189)
+position = Vector2(-1140, 179)
+
+[node name="Marker2D5" type="Marker2D" parent="Spawners"]
+position = Vector2(-1140, -195)
+
+[node name="Marker2D6" type="Marker2D" parent="Spawners"]
+position = Vector2(-1126, -503)
+
+[node name="Marker2D7" type="Marker2D" parent="Spawners"]
+position = Vector2(-1114, -743)
+
+[node name="Marker2D8" type="Marker2D" parent="Spawners"]
+position = Vector2(-846, -853)
+
+[node name="Marker2D9" type="Marker2D" parent="Spawners"]
+position = Vector2(-594, -847)
+
+[node name="Marker2D10" type="Marker2D" parent="Spawners"]
+position = Vector2(-10, -845)
+
+[node name="Marker2D11" type="Marker2D" parent="Spawners"]
+position = Vector2(328, -845)
+
+[node name="Marker2D12" type="Marker2D" parent="Spawners"]
+position = Vector2(934, -283)
+
+[node name="Marker2D13" type="Marker2D" parent="Spawners"]
+position = Vector2(946, -689)
+
+[node name="Marker2D14" type="Marker2D" parent="Spawners"]
+position = Vector2(944, -141)
+
+[node name="Marker2D15" type="Marker2D" parent="Spawners"]
+position = Vector2(944, -141)
+
+[node name="Marker2D16" type="Marker2D" parent="Spawners"]
+position = Vector2(940, 67)
 
 [node name="Enemies" type="Node2D" parent="."]
 

@@ -100,13 +100,13 @@ func takeDamage(_damage, _type):
 				_damage -= _damage/2
 	health -= _damage
 	if health <= 0:
-		die()
+		killed()
 
 func killed():
-	for i in range(0,randi_range(0,1)):
+	for i in range(0,randi_range(1,2)):
 		var coin = coin.instantiate()
-		coin.global_position = global_position + Vector2(randf_range(-10,10), randf_range(-10,10))
 		get_parent().add_child(coin)
+		coin.global_position = global_position + Vector2(randf_range(-10,10), randf_range(-10,10))
 	die()
 
 func die():

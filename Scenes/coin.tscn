@@ -50,6 +50,7 @@ colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 gradient = SubResource("Gradient_0nk7e")
 fill = 1
 fill_from = Vector2(0.495413, 0.495413)
+fill_to = Vector2(0.894495, 0.215596)
 
 [node name="Coin" type="AnimatedSprite2D"]
 position = Vector2(1, 3)
@@ -71,7 +72,7 @@ stream = ExtResource("3_eanfs")
 volume_db = -15.0
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(-17.6146, -26.4219)
-energy = 0.6
+position = Vector2(-17.6146, -44.0366)
+energy = 0.2
 texture = SubResource("GradientTexture2D_44bgj")
-texture_scale = 1.95
+texture_scale = 5.76

@@ -38,7 +38,7 @@ func _process(delta):
 	$GUI/Money.text = ": " + str(TotalMoney.money)
 	spawn_timer += 1
 	if enemies_to_spawn > 0 and spawn_timer > max_spawn_timer:
-		if emitter.health < emitter.max_health:
+		if enemies_to_spawn % 3 == 0 and emitter.health < emitter.max_health:
 			emitter.health+=1
 		spawn_timer = 0
 		var spawn = Spawners.get_children()[randi_range(0,3)].global_position

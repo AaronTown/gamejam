@@ -51,10 +51,10 @@ func _on_input_event(viewport, event, shape_idx):
 		if event.button_index == MOUSE_BUTTON_RIGHT and event.is_pressed():
 			showTowerMenu()
 		if event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
-			self.rotation += 0.1
+			$Light.rotation += 0.1
 			checkLightValidity()
 		if event.button_index == MOUSE_BUTTON_WHEEL_UP:
-			self.rotation -= 0.1
+			$Light.rotation -= 0.1
 			checkLightValidity()
 
 func showTowerMenu():

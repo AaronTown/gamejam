@@ -14,7 +14,7 @@ var tick = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	lightOb = Light.instantiate()
-	lightOb.damage = 10
+	lightOb.damage = 30
 	add_child(lightOb)
 	#ChangeType(Color.BLUE)
 	pass

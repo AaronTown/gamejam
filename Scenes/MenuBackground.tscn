@@ -1,4 +1,4 @@
-[gd_scene load_steps=372 format=3 uid="uid://d12n8ben6jf83"]
+[gd_scene load_steps=373 format=3 uid="uid://d12n8ben6jf83"]
 
 [ext_resource type="Texture2D" uid="uid://dub2jjk4ng8ie" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/1 Tiles/Map_tiles.png" id="1_cv084"]
 [ext_resource type="Texture2D" uid="uid://b4f5jhln64utn" path="res://craftpix-net-280167-free-level-map-pixel-art-assets-pack/1 Tiles/Map_tile_01.png" id="2_kr5d1"]
@@ -2333,6 +2333,9 @@ sources/224 = SubResource("TileSetAtlasSource_7lpef")
 sources/225 = SubResource("TileSetAtlasSource_xpn3g")
 sources/226 = SubResource("TileSetAtlasSource_luogd")
 
+[sub_resource type="LabelSettings" id="LabelSettings_jyq1g"]
+font_size = 500
+
 [node name="MenuBackground" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -2346,3 +2349,11 @@ layer_1/tile_data = PackedInt32Array(720906, 524288, 10, 786442, 524288, 11, 720
 layer_2/name = "Objects"
 layer_2/z_index = 2
 layer_2/tile_data = PackedInt32Array(720904, 262144, 11, 720905, 327680, 11, 655370, 262144, 11, 655371, 327680, 11, 589837, 262144, 11, 589838, 327680, 11, 655372, 262144, 11, 589831, 262144, 11, 917517, 327680, 11, 917518, 327680, 11, 917519, 262144, 11, 786443, 327680, 11, 851980, 262144, 11, 786448, 262144, 11, 786449, 327680, 11, 720911, 327680, 11, 327698, 851968, 22, 393234, 851968, 23, 327699, 917504, 22, 393235, 917504, 23, 327700, 983040, 22, 393236, 983040, 23, 327701, 1048576, 22, 393237, 1048576, 23, 327702, 1114112, 22, 393238, 1114112, 23, 327703, 1179648, 22, 393239, 1179648, 23, 327704, 1245184, 22, 393240, 1245184, 23, 327705, 1310720, 22, 393241, 1310720, 23, 1179659, 223, 268435456, 1245195, 223, 268435457, 1900564, 225, 0, 589839, 262144, 11, 589840, 327680, 11, 1310861, 197, 0, 1245325, 196, 0, 1441936, 190, 0, 1376398, 195, 0, 1114255, 221, 0, 1310864, 221, 0, 1376397, 221, 0, 1245326, 221, 0, 1507469, 1507328, 0)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 39530.0
+offset_top = -42.0
+offset_right = 47583.0
+offset_bottom = 640.0
+text = "What are you waiting for... play the game"
+label_settings = SubResource("LabelSettings_jyq1g")
